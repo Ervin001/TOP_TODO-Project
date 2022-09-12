@@ -1,5 +1,6 @@
 import '../assets/style.css';
-import printMe from './item.js';
+import { DisplayUI } from './display.js';
 
-console.log('Testing the styles file');
-printMe();
+const displayUI = new DisplayUI();
+displayUI.showWinner('Hello  World');
+displayUI.containerAdd();

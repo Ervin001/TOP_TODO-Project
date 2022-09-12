@@ -1,3 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
 body {
-  background-color: rgb(76, 68, 68);
+  background-color: #545454;
+}
+
+.container {
+  background-color: #0c122c;
+  max-width: 120rem;
+  height: 100vh;
+  font-size: 10rem;
 }

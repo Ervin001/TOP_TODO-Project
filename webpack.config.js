@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    item: './src/item.js',
+    gameUI: './src/display.js',
   },
   devtool: 'inline-source-map',
   plugins: [
