@@ -1,3 +1,28 @@
+/* Default theme colors */
+:root {
+  --background-color: white;
+  --logo-colors: red;
+}
+
+/* Dark theme colors */
+:root.dark-theme {
+  --background-color: rgb(14, 18, 40);
+  --logo-colors: rgb(29, 134, 13);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  :root {
+    --background-color: rgb(14, 18, 40);
+    --logo-colors: rgb(245, 102, 0);
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
+  :root.light-theme {
+    --background-color: white;
+    --logo-colors: red;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,8 +35,12 @@ body {
 }
 
 .container {
-  background-color: #0c122c;
+  background-color: var(--background-color);
   max-width: 120rem;
   height: 100vh;
   font-size: 10rem;
+}
+
+.logo {
+  color: var(--logo-colors);
 }
