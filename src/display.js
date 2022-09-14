@@ -1,3 +1,5 @@
+import { lastDayOfDecade } from 'date-fns';
+
 export class DisplayUI {
   addHome() {
     // main Container El
@@ -5,22 +7,24 @@ export class DisplayUI {
     containerEl.classList.add('container');
     document.body.appendChild(containerEl);
 
-    // First child
-    const headerEl = document.createElement('header');
-    headerEl.classList.add('main', 'header');
-    containerEl.appendChild(headerEl);
+    // Sidebar
+    const sidebarContainerEl = document.createElement('div');
+    sidebarContainerEl.classList.add('sidebar');
+    containerEl.appendChild(sidebarContainerEl);
 
-    // ^logo
-    const logoEl = document.createElement('div');
-    logoEl.textContent = 'TODO';
-    logoEl.classList.add('logo', 'top');
-    headerEl.appendChild(logoEl);
+    // top-container
+    const topContainerEl = document.createElement('div');
+    topContainerEl.classList.add('profile-search');
+    containerEl.appendChild(topContainerEl);
 
-    // ^options
+    // infoTodo container
+    const todoInfoContainerEl = document.createElement('div');
+    todoInfoContainerEl.classList.add('todo-info');
+    containerEl.appendChild(todoInfoContainerEl);
 
-    // Second Child
-    const mainContentEl = document.createElement('div');
-    mainContentEl.classList.add('main', 'main-content');
-    containerEl.appendChild(mainContentEl);
+    //Extra info container
+    const extraInfoContainerEl = document.createElement('div');
+    extraInfoContainerEl.classList.add('extra-info');
+    containerEl.appendChild(extraInfoContainerEl);
   }
 }

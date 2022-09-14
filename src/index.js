@@ -1,4 +1,4 @@
-import '../assets/style.css';
+import './assets/style.css';
 import { DisplayUI } from './display.js';
 import { compareAsc, format, addDays, startOfDay, getDate } from 'date-fns';
 

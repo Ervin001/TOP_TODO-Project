@@ -1,0 +1,68 @@
+/* Default theme colors */
+:root {
+  --background-color: #fff;
+  --sidebar-color: #0f3460;
+  --topcontent-bottom-border-color: #eee;
+}
+
+/* Dark theme colors */
+:root.dark {
+  --background-color: rgb(14, 18, 40);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  :root {
+    --background-color: rgb(14, 18, 40);
+    --logo-colors: rgb(245, 102, 0);
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
+  :root.light {
+    --background-color: #fff;
+    --sidebar-color: #0f3460;
+    --topcontent-bottom-border-color: #eee;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #545454;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'sb tc tc'
+    'sb mc ec'
+    'sb mc ec';
+  grid-template-rows: 2fr 6fr;
+  grid-template-columns: 0.5fr 10fr;
+
+  background-color: var(--background-color);
+  max-width: 120rem;
+  height: 100vh;
+}
+
+.sidebar {
+  grid-area: sb;
+  background-color: var(--sidebar-color);
+}
+
+.profile-search {
+  grid-area: tc;
+  border-bottom: var(--topcontent-bottom-border-color) solid 1px;
+}
+
+.todo-info {
+  grid-area: mc;
+}
+
+.extra-info {
+  grid-area: ec;
+}
