@@ -5,9 +5,12 @@ module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    gameUI: './src/display.js',
+    display: './src/display.js',
   },
   devtool: 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'TODO App',
@@ -17,6 +20,9 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
+  },
+  optimization: {
+    runtimeChunk: 'single',
   },
   module: {
     rules: [

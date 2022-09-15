@@ -3,7 +3,23 @@
   --background-color: #fff;
   --sidebar-color: #0f3460;
   --topcontent-bottom-border-color: #eee;
+  --support-svg-icon: url('/src/assets/icons/chatbubbles-sharp.svg');
+  --checkmark-svg-icon: url('/src/assets/icons/checkmark-outline.svg');
+  --home-svg-icon: url('/src/assets/icons/home-sharp.svg');
+  --night-svg-icon: url('/src/assets/icons/moon-sharp.svg');
+  --profile-svg-icon: url('/src/assets/icons/person-circle-sharp.svg');
+  --search-svg-icon: url('/src/assets/icons/search-sharp.svg');
+  --settings-svg-icon: url('/src/assets/icons/settings-sharp.svg');
+  --favorites-svg-icon: url('/src/assets/icons/star-sharp.svg');
+  --day-svg-icon: url('/src/assets/icons/sunny-sharp.svg');
 }
+/* 
+colors 
+#16213E
+#0F3460
+#533483
+#E94560
+*/
 
 /* Dark theme colors */
 :root.dark {
@@ -52,6 +68,41 @@ body {
 .sidebar {
   grid-area: sb;
   background-color: var(--sidebar-color);
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.home-icon {
+  background-image: var(--home-svg-icon);
+}
+.checkmark-icon {
+  background-image: var(--checkmark-svg-icon);
+}
+.favorites-icon {
+  background-image: var(--favorites-svg-icon);
+}
+.profile-icon {
+  background-image: var(--profile-svg-icon);
+}
+.support-icon {
+  background-image: var(--support-svg-icon);
+}
+.settings-icon {
+  background-image: var(--settings-svg-icon);
+}
+.day-night-icon {
+  background-image: var(--day-svg-icon);
+}
+
+@media (prefers-color-scheme: dark) {
+  /* defaults to dark theme */
+  .day-night-icon {
+    background-image: var(--night-svg-icon);
+  }
+  /* Override dark mode with light mode styles if the user decides to swap */
 }
 
 .profile-search {
