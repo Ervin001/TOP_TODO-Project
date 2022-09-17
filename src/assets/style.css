@@ -12,6 +12,7 @@
   --settings-svg-icon: url('/src/assets/icons/settings-sharp.svg');
   --favorites-svg-icon: url('/src/assets/icons/star-sharp.svg');
   --day-svg-icon: url('/src/assets/icons/sunny-sharp.svg');
+  --profile2-svg-icon: url('https://xsgames.co/randomusers/avatar.php?g=pixel');
 }
 /* 
 colors 
@@ -88,21 +89,27 @@ html {
 .home-icon {
   background-image: var(--home-svg-icon);
 }
+
 .checkmark-icon {
   background-image: var(--checkmark-svg-icon);
 }
+
 .favorites-icon {
   background-image: var(--favorites-svg-icon);
 }
+
 .profile-icon {
   background-image: var(--profile-svg-icon);
 }
+
 .support-icon {
   background-image: var(--support-svg-icon);
 }
+
 .settings-icon {
   background-image: var(--settings-svg-icon);
 }
+
 .day-night-icon {
   background-image: var(--day-svg-icon);
 }
@@ -119,6 +126,7 @@ html {
   grid-area: tc;
   display: flex;
 
+  padding: 0 1rem;
   border-bottom: var(--topcontent-bottom-border-color) solid 1px;
 }
 
@@ -126,16 +134,54 @@ html {
   display: flex;
   align-items: flex-end;
   flex-grow: 8;
+  padding: 2rem 0;
 }
 
 .title-tab {
-  margin: 1rem;
-  background-color: red;
+  color: white;
   font-size: 2rem;
 }
 
 .top-right-C {
-  flex-grow: 2;
+  flex-grow: 1;
+
+  display: grid;
+  grid-template-areas:
+    'search profile'
+    'todoButton todoButton';
+
+  padding: 0rem 0 2rem 0;
+}
+
+.search-icon {
+  grid-area: search;
+  align-self: center;
+  justify-self: end;
+  margin-right: 1rem;
+
+  margin-top: 0 !important;
+  background-image: var(--search-svg-icon);
+}
+
+.user-profile {
+  grid-area: profile;
+  align-self: center;
+
+  background-image: var(--profile-svg-icon);
+  height: 4rem;
+  width: 4rem;
+}
+
+.todo-button {
+  grid-area: todoButton;
+  align-self: end;
+  justify-self: center;
+
+  border-radius: 4000px;
+  border: none;
+  width: 10rem;
+  height: 3rem;
+  font-size: 1rem;
 }
 
 .todo-info {

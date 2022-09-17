@@ -62,14 +62,30 @@ export class DisplayUI {
     topContainerEl.appendChild(topLeftContainerEl);
 
     // Open tab title
-    const openTabTitle = document.createElement('h1');
-    openTabTitle.classList.add('title-tab');
-    openTabTitle.textContent = 'My Task';
-    topLeftContainerEl.appendChild(openTabTitle);
+    const openTabTitleEl = document.createElement('h1');
+    openTabTitleEl.classList.add('title-tab');
+    openTabTitleEl.textContent = 'My Task';
+    topLeftContainerEl.appendChild(openTabTitleEl);
 
     // Right Top-Container
     const topRightContainerEl = document.createElement('div');
     topRightContainerEl.classList.add('top-right-C');
     topContainerEl.appendChild(topRightContainerEl);
+
+    // Search Svg
+    const searchIcon = document.createElement('div');
+    searchIcon.classList.add('search-icon', 'icon');
+    topRightContainerEl.appendChild(searchIcon);
+
+    // User profile
+    const userProfileIcon = document.createElement('div');
+    userProfileIcon.classList.add('user-profile', 'icon');
+    topRightContainerEl.appendChild(userProfileIcon);
+
+    // _Todo button
+    const todoButtonEl = document.createElement('button');
+    todoButtonEl.classList.add('todo-button');
+    todoButtonEl.textContent = 'New Task';
+    topRightContainerEl.appendChild(todoButtonEl);
   }
 }
