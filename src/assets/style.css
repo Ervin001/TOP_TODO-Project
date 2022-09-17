@@ -57,7 +57,7 @@ html {
     'sb tc tc'
     'sb mc ec'
     'sb mc ec';
-  grid-template-rows: 2fr 6fr;
+  grid-template-rows: 1.5fr 6fr;
   grid-template-columns: 0.5fr 10fr;
 
   background-color: var(--background-color);
@@ -82,6 +82,7 @@ html {
 .icon {
   width: 2.4rem;
   height: 2.4rem;
+  background-repeat: no-repeat;
 }
 
 .home-icon {
@@ -116,7 +117,25 @@ html {
 
 .profile-search {
   grid-area: tc;
+  display: flex;
+
   border-bottom: var(--topcontent-bottom-border-color) solid 1px;
+}
+
+.top-left-C {
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 8;
+}
+
+.title-tab {
+  margin: 1rem;
+  background-color: red;
+  font-size: 2rem;
+}
+
+.top-right-C {
+  flex-grow: 2;
 }
 
 .todo-info {

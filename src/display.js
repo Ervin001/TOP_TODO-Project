@@ -1,7 +1,6 @@
 import HomeSvg from './assets/icons/home-sharp.svg';
 export class DisplayUI {
   addHome() {
-    console.dir(HomeSvg);
     // main Container El
     const containerEl = document.createElement('div');
     containerEl.classList.add('container');
@@ -56,5 +55,21 @@ export class DisplayUI {
     const extraInfoContainerEl = document.createElement('div');
     extraInfoContainerEl.classList.add('extra-info');
     containerEl.appendChild(extraInfoContainerEl);
+
+    // Left Top-Container
+    const topLeftContainerEl = document.createElement('div');
+    topLeftContainerEl.classList.add('top-left-C');
+    topContainerEl.appendChild(topLeftContainerEl);
+
+    // Open tab title
+    const openTabTitle = document.createElement('h1');
+    openTabTitle.classList.add('title-tab');
+    openTabTitle.textContent = 'My Task';
+    topLeftContainerEl.appendChild(openTabTitle);
+
+    // Right Top-Container
+    const topRightContainerEl = document.createElement('div');
+    topRightContainerEl.classList.add('top-right-C');
+    topContainerEl.appendChild(topRightContainerEl);
   }
 }
