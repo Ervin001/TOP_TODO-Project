@@ -87,5 +87,13 @@ export class DisplayUI {
     todoButtonEl.classList.add('todo-button');
     todoButtonEl.textContent = 'New Task';
     topRightContainerEl.appendChild(todoButtonEl);
+
+    // Expiremental todo item
+    const todoContainerEl = document.createElement('div');
+    todoContainerEl.classList.add('todo-container');
+    todoInfoContainerEl.appendChild(todoContainerEl);
+    const todoContainerEl2 = document.createElement('div');
+    todoContainerEl2.classList.add('todo-container');
+    todoInfoContainerEl.appendChild(todoContainerEl2);
   }
 }
