@@ -87,13 +87,17 @@ export class DisplayUI {
     todoButtonEl.classList.add('todo-button');
     todoButtonEl.textContent = 'New Task';
     topRightContainerEl.appendChild(todoButtonEl);
+  }
 
-    // Expiremental todo item
-    const todoContainerEl = document.createElement('div');
-    todoContainerEl.classList.add('todo-container');
-    todoInfoContainerEl.appendChild(todoContainerEl);
-    const todoContainerEl2 = document.createElement('div');
-    todoContainerEl2.classList.add('todo-container');
-    todoInfoContainerEl.appendChild(todoContainerEl2);
+  /**
+   *
+   * @param {object} Object data will be added to DOM
+   */
+  addTodoItem(data) {
+    const todoContainerEl = document.querySelector('.todo-info');
+    const todoItemCntnrEl = document.createElement('div');
+    todoItemCntnrEl.classList.add('todo-item');
+    todoItemCntnrEl.innerHTML = `<div class="radio-btn">Radio Here</div><div class="todo-item-title"></div><div class="date"></div>`;
+    todoContainerEl.appendChild(todoItemCntnrEl);
   }
 }

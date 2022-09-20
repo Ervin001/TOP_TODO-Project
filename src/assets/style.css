@@ -4,8 +4,9 @@
   --sidebar-color: #0f3460;
   --topcontent-bottom-border-color: #eee;
   --main-task-color: #0d1024;
-  --todo-container-color: #0c2a4d;
-  --todo-container-shadow-color: rgb(27, 36, 47);
+  --todo-container-color: #3f5d80;
+  --todo-container-bottom-border: #4b5057;
+  --font-color: #e7ebef;
 
   --support-svg-icon: url('/src/assets/icons/chatbubbles-sharp.svg');
   --checkmark-svg-icon: url('/src/assets/icons/checkmark-outline.svg');
@@ -183,12 +184,11 @@ html {
 }
 
 .todo-container {
-  border-radius: 8px;
-  min-width: 70rem;
-
+  width: 100%;
   height: 12rem;
-  background-color: var(--todo-container-color);
-  box-shadow: 0rem 8px 12px var(--todo-container-shadow-color);
+  border-bottom: var(--topcontent-bottom-border-color) solid 1px;
+}
+.todo-item {
 }
 
 .extra-info {
