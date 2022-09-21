@@ -97,7 +97,13 @@ export class DisplayUI {
     const todoContainerEl = document.querySelector('.todo-info');
     const todoItemCntnrEl = document.createElement('div');
     todoItemCntnrEl.classList.add('todo-item');
-    todoItemCntnrEl.innerHTML = `<div class="radio-btn">Radio Here</div><div class="todo-item-title"></div><div class="date"></div>`;
+    todoItemCntnrEl.innerHTML = `
+    <div class="radio-btn">
+      <input type="checkbox" id="radio-btn" name="checked-todo" value="checked" "radio-btn item-todo"</input>
+      <label for="radio-btn"></label>
+    </div>
+      <div class="todo-item-title item-todo">Title Here</div>
+      <div class="date item-todo">Today</div>`;
     todoContainerEl.appendChild(todoItemCntnrEl);
   }
 }

@@ -12,4 +12,4 @@ const displayUI = new DisplayUI();
 displayUI.addHome();
 
 // Object created by user in[ut will go here to add to DOM]
-displayUI.addTodoItem(todoData);
+displayUI.addTodoItem('Hello World');
