@@ -1,11 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { resourceUsage } = require('process');
 
 module.exports = {
   mode: 'development',
   entry: {
     index: './src/index.js',
-    display: './src/display.js',
+    styles: './src/assets/styles.css',
   },
   devtool: 'inline-source-map',
   devServer: {
@@ -32,6 +33,10 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
     ],
