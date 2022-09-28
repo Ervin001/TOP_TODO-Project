@@ -93,7 +93,7 @@ export class DisplayUI {
    *
    * @param {object} Object data will be added to DOM
    */
-  addTodoItem(data) {
+  addTodoItem(data, date) {
     const todoContainerEl = document.querySelector('.todo-info');
     const todoItemCntnrEl = document.createElement('div');
     todoItemCntnrEl.classList.add('todo-item');
@@ -102,8 +102,8 @@ export class DisplayUI {
       <input type="checkbox" id="radio-btn" name="checked-todo" value="checked" "radio-btn item-todo"</input>
       <label for="radio-btn"></label>
     </div>
-      <div class="todo-item-title item-todo">Title Here</div>
-      <div class="date item-todo">Today</div>`;
+      <div class="todo-item-title item-todo">${data}</div>
+      <div class="date item-todo">${date}</div>`;
     todoContainerEl.appendChild(todoItemCntnrEl);
   }
 }

@@ -6,7 +6,7 @@
   --main-task-color: #0d1024;
   --todo-container-color: #3f5d80;
   --todo-container-bottom-border: #4b5057;
-  --font-color: #e7ebef;
+  --font-color: #0e2f56;
 
   --support-svg-icon: url('/src/assets/icons/chatbubbles-sharp.svg');
   --checkmark-svg-icon: url('/src/assets/icons/checkmark-outline.svg');
@@ -31,6 +31,8 @@ colors
   :root {
     --background-color: rgb(14, 18, 40);
     --main-task-color: #cfd6df;
+    --font-color: #cfd6df;
+
     --profile-svg-icon: url('/src/assets/icons/person-circle-sharp.svg');
     --search-svg-icon: url('/src/assets/icons/search-sharp.svg');
     --day-night-svg-icon: url('/src/assets/icons/moon-sharp.svg');
@@ -111,6 +113,7 @@ body {
 .sidebar .icon:hover,
 .sidebar .icon:active {
   background-color: red;
+  border-radius: 50%;
 }
 
 .home-icon {
@@ -208,30 +211,40 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
 
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   border-right: var(--topcontent-bottom-border-color) solid 1px;
+  overflow-y: scroll;
+}
+
+.item-todo {
+  align-self: center;
 }
 
 .todo-item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 2rem;
 
   width: 100%;
-  height: 8rem;
+  height: 6rem;
   padding: 0 2rem;
   border-bottom: var(--topcontent-bottom-border-color) solid 1px;
-  color: white;
+  color: var(--font-color);
 }
 
 .todo-item-title {
   flex-grow: 1;
+  font-size: 2rem;
 }
 
 .date {
   margin-left: auto;
+
+  font-family: 'Inter-light';
+  font-size: 1rem;
 }
 
 .extra-info {
