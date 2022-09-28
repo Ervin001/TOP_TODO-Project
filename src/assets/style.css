@@ -37,8 +37,29 @@ colors
   }
 }
 
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-VariableFont_slnt\,wght.ttf');
+
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Inter-bold';
+  src: url('./fonts/Inter-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Inter-light';
+  src: url('./fonts/Inter-Light.ttf');
+}
+
 html {
   /* background-color: rgb(14, 18, 40); */
+}
+
+body {
+  font-family: 'Inter';
 }
 
 * {
@@ -80,6 +101,16 @@ html {
   width: 2.4rem;
   height: 2.4rem;
   background-repeat: no-repeat;
+}
+
+.icon:hover,
+.icon:active {
+  cursor: pointer;
+}
+
+.sidebar .icon:hover,
+.sidebar .icon:active {
+  background-color: red;
 }
 
 .home-icon {
