@@ -107,7 +107,7 @@ export class DisplayUI {
     todoContainerEl.prepend(todoItemCntnrEl);
   }
 
-  newTask(data) {
-    console.log(data);
+  blankItem() {
+    const todoContainerEl = document.querySelector('.todo-info');
   }
 }
