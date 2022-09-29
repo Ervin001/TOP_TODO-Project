@@ -104,6 +104,10 @@ export class DisplayUI {
     </div>
       <div class="todo-item-title item-todo">${data}</div>
       <div class="date item-todo">${date}</div>`;
-    todoContainerEl.appendChild(todoItemCntnrEl);
+    todoContainerEl.prepend(todoItemCntnrEl);
+  }
+
+  newTask(data) {
+    console.log(data);
   }
 }
