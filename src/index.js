@@ -18,5 +18,5 @@ displayUI.addTodoItem('Get Milk', formattedDate);
 const newTaskBtn = document.querySelector('.todo-button');
 
 newTaskBtn.addEventListener('click', (e) => {
-  displayUI.addTodoItem('Todo', formattedDate);
+  displayUI.templateItem('Hello World');
 });

@@ -90,9 +90,10 @@ export class DisplayUI {
   }
 
   /**
-   *
-   * @param {object} Object data will be added to DOM
+   * @param {String} data Info for TODO item
+   * @param {String} date String coming from date-fns
    */
+
   addTodoItem(data, date) {
     const todoContainerEl = document.querySelector('.todo-info');
     const todoItemCntnrEl = document.createElement('div');
@@ -107,7 +108,12 @@ export class DisplayUI {
     todoContainerEl.prepend(todoItemCntnrEl);
   }
 
-  blankItem() {
-    const todoContainerEl = document.querySelector('.todo-info');
+  templateItem() {
+    // const todoContainerEl = document.querySelector('.container');
+    const tofoinfoContainerEl = document.querySelector('.todo-info');
+    const todoFormContainerEl = document.createElement('div');
+    todoFormContainerEl.classList.add('todo-form');
+    // document.body.appendChild(todoFormContainerEl);
+    tofoinfoContainerEl.appendChild(todoFormContainerEl);
   }
 }
