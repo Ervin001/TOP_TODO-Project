@@ -108,12 +108,28 @@ export class DisplayUI {
     todoContainerEl.prepend(todoItemCntnrEl);
   }
 
+  // Will open the form for inputting new TODO
   templateItem() {
     // const todoContainerEl = document.querySelector('.container');
-    const tofoinfoContainerEl = document.querySelector('.todo-info');
+    const todoInfoContainerEl = document.querySelector('.todo-info');
     const todoFormContainerEl = document.createElement('div');
     todoFormContainerEl.classList.add('todo-form');
-    // document.body.appendChild(todoFormContainerEl);
-    tofoinfoContainerEl.appendChild(todoFormContainerEl);
+    document.body.appendChild(todoFormContainerEl);
+    // todoInfoContainerEl.appendChild(todoFormContainerEl);
+
+    // Form info
+    let formHtml = `
+    <div class="todo-title">Todo</div>
+    <div class="bottom-container">
+      <input type="text" id="inpt" placeholder="Todo...">
+      <div class="colors">
+        <div class="color red"> Item 1</div>
+        <div class="color blue"> Item 2</div>
+        <div class="color yelllo"> Item 3</div>
+      </div>
+    </div>
+    `;
+
+    todoFormContainerEl.insertAdjacentHTML('beforeend', formHtml);
   }
 }

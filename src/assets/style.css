@@ -7,7 +7,7 @@
   --todo-container-color: #3f5d80;
   --todo-container-bottom-border: #4b5057;
   --font-color: #0e2f56;
-  --todo-form-color: #3f5d80;
+  --todo-form-color: #0f3460;
 
   --support-svg-icon: url('/src/assets/icons/chatbubbles-sharp.svg');
   --checkmark-svg-icon: url('/src/assets/icons/checkmark-outline.svg');
@@ -89,15 +89,41 @@ body {
 }
 
 .todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
-  height: 40%;
-  width: 40%;
+  height: 60%;
+  width: 60%;
   background-color: var(--todo-form-color);
   border-radius: 4px;
+}
+
+.todo-title {
+  font-size: 2rem;
+  color: white;
+}
+
+#inpt {
+  width: 50%;
+  height: 3rem;
+  font-size: 3rem;
+  color: rgba(14, 18, 40, 0.419);
+}
+
+.bottom-container {
+  display: flex;
+}
+
+.colors {
+  color: red;
+  font-size: 2rem;
 }
 
 .sidebar {
