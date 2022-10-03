@@ -123,10 +123,22 @@ export class DisplayUI {
     <div class="bottom-container">
       <input type="text" id="inpt" placeholder="Todo...">
       <div class="colors">
-        <div class="color red"> Item 1</div>
-        <div class="color blue"> Item 2</div>
-        <div class="color yelllo"> Item 3</div>
+        <div class="first-radio radio">
+          <input type="radio" id="color--red" name="color" value="red" checked>
+          <label for="color--red">Red</label>
+        </div>
+          
+        <div class="second-radio radio">
+          <input type="radio" id="color--green" name="color" value="green" >
+          <label for="color--green">Green</label>
+        </div>
+          
+        <div class="third-radio radio">
+          <input type="radio" id="color--yellow" name="color" value="yellow" >
+          <label for="color--yellow">Yellow</label>
+        </div>
       </div>
+      <button class="frm-submit"></button>
     </div>
     `;
 

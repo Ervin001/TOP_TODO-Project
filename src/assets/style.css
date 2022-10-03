@@ -106,15 +106,51 @@ body {
 }
 
 .todo-title {
-  font-size: 2rem;
+  font-size: 4rem;
   color: white;
 }
 
+.bottom-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #inpt {
-  width: 50%;
+  width: 60%;
   height: 3rem;
   font-size: 3rem;
-  color: rgba(14, 18, 40, 0.419);
+  color: rgb(14, 18, 40);
+}
+
+.colors {
+  margin-top: 1rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.color {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: red;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.first-radio {
+  color: red;
+}
+
+.second-radio {
+  color: green;
+}
+
+.third-radio {
+  color: yellow;
 }
 
 .bottom-container {
@@ -122,7 +158,6 @@ body {
 }
 
 .colors {
-  color: red;
   font-size: 2rem;
 }
 
