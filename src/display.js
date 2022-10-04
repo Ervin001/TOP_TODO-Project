@@ -87,6 +87,39 @@ export class DisplayUI {
     todoButtonEl.classList.add('todo-button');
     todoButtonEl.textContent = 'New Task';
     topRightContainerEl.appendChild(todoButtonEl);
+
+    // form for TODO
+    const todoFormContainerEl = document.createElement('div');
+    todoFormContainerEl.classList.add('todo-form');
+    todoFormContainerEl.classList.add('hide');
+    document.body.appendChild(todoFormContainerEl);
+    let formHtml = `
+      <div class="todo-title">Todo</div>
+      <form action="" method="get" class="bottom-container">
+        <input type="text" id="inpt" placeholder="Todo...">
+        <div class="colors">
+          <div class="first-radio radio">
+            <input type="radio" id="color--red" name="color" value="red" checked>
+            <label for="color--red">Red</label>
+          </div>
+            
+          <div class="second-radio radio">
+            <input type="radio" id="color--green" name="color" value="green" >
+            <label for="color--green">Green</label>
+          </div>
+            
+          <div class="third-radio radio">
+            <input type="radio" id="color--yellow" name="color" value="yellow" >
+            <label for="color--yellow">Yellow</label>
+          </div>
+        </div>
+        <div class="frm-submit">
+        <input type="submit" value="Add">
+      </div>
+      </form>
+      `;
+
+    todoFormContainerEl.insertAdjacentHTML('beforeend', formHtml);
   }
 
   /**
@@ -109,39 +142,14 @@ export class DisplayUI {
   }
 
   // Will open the form for inputting new TODO
-  templateItem() {
+  showForm() {
     // const todoContainerEl = document.querySelector('.container');
-    const todoInfoContainerEl = document.querySelector('.todo-info');
-    const todoFormContainerEl = document.createElement('div');
-    todoFormContainerEl.classList.add('todo-form');
-    document.body.appendChild(todoFormContainerEl);
-    // todoInfoContainerEl.appendChild(todoFormContainerEl);
+    const todoInfoContainerEl = document.querySelector('.todo-form');
+    todoInfoContainerEl.classList.remove('hide');
+  }
 
-    // Form info
-    let formHtml = `
-    <div class="todo-title">Todo</div>
-    <div class="bottom-container">
-      <input type="text" id="inpt" placeholder="Todo...">
-      <div class="colors">
-        <div class="first-radio radio">
-          <input type="radio" id="color--red" name="color" value="red" checked>
-          <label for="color--red">Red</label>
-        </div>
-          
-        <div class="second-radio radio">
-          <input type="radio" id="color--green" name="color" value="green" >
-          <label for="color--green">Green</label>
-        </div>
-          
-        <div class="third-radio radio">
-          <input type="radio" id="color--yellow" name="color" value="yellow" >
-          <label for="color--yellow">Yellow</label>
-        </div>
-      </div>
-      <button class="frm-submit"></button>
-    </div>
-    `;
-
-    todoFormContainerEl.insertAdjacentHTML('beforeend', formHtml);
+  removeFormContainer() {
+    const todoFormContainerEl = document.querySelector('.todo-form');
+    todoFormContainerEl.classList.add('hide');
   }
 }

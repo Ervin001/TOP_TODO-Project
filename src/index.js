@@ -18,5 +18,16 @@ displayUI.addTodoItem('Get Milk', formattedDate);
 const newTaskBtn = document.querySelector('.todo-button');
 
 newTaskBtn.addEventListener('click', (e) => {
-  displayUI.templateItem('Hello World');
+  displayUI.showForm();
+  const formValues = document.querySelector('.bottom-container');
+
+  formValues.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const inputValInput = document.getElementById('inpt');
+    let inputVal = inputValInput.value;
+
+    displayUI.addTodoItem(inputVal, formattedDate);
+    displayUI.removeFormContainer();
+    inputVal = '';
+  });
 });
