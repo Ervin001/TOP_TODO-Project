@@ -1,5 +1,5 @@
 import './assets/style.css';
-import { DisplayUI } from './display.js';
+import DisplayUI from './display.js';
 import { compareAsc, format, addDays, startOfDay, getDate } from 'date-fns';
 
 // This is for toggling dark and light mode
@@ -10,15 +10,3 @@ const today = getDate(date);
 
 const displayUI = new DisplayUI();
 displayUI.homePage();
-
-// Object created by user in[ut will go here to add to DOM]
-// displayUI.addTodoItem('Get Milk', formattedDate);
-// displayUI.addTodoItem('Get Milk', formattedDate);
-// displayUI.addTodoItem('Get Milk', formattedDate);
-const newTaskBtn = document.querySelector('.todo-button');
-
-newTaskBtn.addEventListener('click', (e) => {
-  displayUI.showForm();
-  // const formValues = document.querySelector('.bottom-container');
-  console.log('Test');
-});
