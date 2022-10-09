@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Ervin001/TOP_TODO-Project#readme",
   "devDependencies": {
+    "chalk": "^5.1.0",
     "css-loader": "^6.7.1",
     "style-loader": "^3.3.1"
   }
