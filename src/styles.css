@@ -1,0 +1,8 @@
+.hello {
+  font-size: 10rem;
+  color: blueviolet;
+}
+
+.img {
+  background: url('./myImage.png');
+}

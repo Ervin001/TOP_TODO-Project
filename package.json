@@ -1,0 +1,25 @@
+{
+  "name": "top_todo-project",
+  "version": "1.0.0",
+  "description": "First TODO project from TOP",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ervin001/TOP_TODO-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ervin001/TOP_TODO-Project/issues"
+  },
+  "homepage": "https://github.com/Ervin001/TOP_TODO-Project#readme",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1"
+  }
+}
