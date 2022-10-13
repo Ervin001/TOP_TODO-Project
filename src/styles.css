@@ -1,11 +1,16 @@
 :root {
-  --sidebar-color: #7048e8;
+  --main-container-color: #160e2e;
+  --sidebar-color: #7048e8; /* main color*/
   --todo-container-color: #f3f0ff;
-  --todo-item-container-color: #b197fc;
+  --font-color: #221646;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --main-container-color: #f3f0ff;
+    --sidebar-color: #4e32a2;
+    --todo-container-color: #221646;
+    --font-color: #d4c8f8;
   }
 }
 
@@ -39,13 +44,14 @@
 }
 
 html {
-  background-color: var(--sidebar-color);
+  /* background-color: var(--sidebar-color); */
 }
 
 body {
   font-family: 'Inter';
   font-size: 4rem;
   /* font-family: 'Libre Franklin'; */
+  color: var(--font-color);
 }
 
 .container {
@@ -55,16 +61,24 @@ body {
   grid-template-areas:
     'lg hd'
     'sb mc';
-  background-color: #e5dbff;
+  gap: 1px;
+
+  /* background-color: var(--main-container-color); */
+  background-color: rgb(137, 137, 137);
   max-width: 100vw;
   height: 100vh;
 }
 
 .logo {
   grid-area: lg;
-  justify-self: center;
-  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  background-color: var(--sidebar-color);
+}
+
+.logo-text {
   font-family: 'Inter-bold';
   font-size: 2rem;
 }
@@ -73,12 +87,22 @@ body {
   grid-area: hd;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  background-color: var(--todo-container-color);
+}
+
+.first-child {
+}
+
+.second-child {
 }
 
 .sidebar {
   grid-area: sb;
+
+  background-color: var(--sidebar-color);
 }
 
 .main-content {
   grid-area: mc;
+  background-color: var(--todo-container-color);
 }
