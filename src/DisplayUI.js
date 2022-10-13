@@ -1,4 +1,5 @@
 import { format } from 'date-fns';
+import Menu from './assets/svgs/menu.svg';
 export default class Display {
   loadHome() {
     // main container
@@ -10,10 +11,16 @@ export default class Display {
     const headerContainerEl = document.createElement('div');
     headerContainerEl.classList.add('grid-item', 'header');
     containerEl.appendChild(headerContainerEl);
+    // Hamburger Menu Container
+    const hamContainerEl = document.createElement('div');
+    hamContainerEl.classList.add('hamburger-menu', 'header-child');
+    headerContainerEl.appendChild(hamContainerEl);
     // Hamburger Menu
-    const hamburgerMenuEl = document.createElement('div');
-    hamburgerMenuEl.classList.add('hamburger-menu', 'header-child');
-    headerContainerEl.appendChild(hamburgerMenuEl);
+    const menuIcon = new Image();
+    menuIcon.src = Menu;
+
+    menuIcon.classList.add('hamburger-menu-svg');
+    hamContainerEl.appendChild(menuIcon);
     // Add todos button
     const addButtonEl = document.createElement('div');
     addButtonEl.classList.add('add-btn', 'header-child');

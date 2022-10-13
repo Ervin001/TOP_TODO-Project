@@ -75,12 +75,19 @@ body {
   grid-area: header;
   display: flex;
   background-color: var(--header-color);
-  padding: 0 2rem;
+  padding: 0 6rem;
 }
 
-.hamburger-menu {
-  justify-content: center;
+.header-child {
+  flex: 1 0 auto;
+  display: flex;
+  justify-content: flex-start;
   align-self: center;
+}
+
+.hamburger-menu-svg {
+  height: 3rem;
+  width: 3rem;
 }
 
 .sidebar {
