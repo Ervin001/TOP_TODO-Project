@@ -18,14 +18,31 @@ export default class Display {
     // Hamburger Menu
     const menuIcon = new Image();
     menuIcon.src = Menu;
-
     menuIcon.classList.add('hamburger-menu-svg');
     hamContainerEl.appendChild(menuIcon);
     // Add todos button
-    const addButtonEl = document.createElement('div');
-    addButtonEl.classList.add('add-btn', 'header-child');
-    headerContainerEl.appendChild(addButtonEl);
+    const addButtonElContainer = document.createElement('div');
+    addButtonElContainer.classList.add('add-btn-container', 'header-child');
+    headerContainerEl.appendChild(addButtonElContainer);
 
+    // Add botton
+    const addButtonEl = document.createElement('button');
+    addButtonEl.classList.add('icon-btn', 'add-btn');
+    addButtonElContainer.appendChild(addButtonEl);
+    // icon
+    const addButtonIcon = document.createElement('div');
+    addButtonIcon.classList.add('add-icon');
+    addButtonEl.appendChild(addButtonIcon);
+    // icon text
+    const addButtonIconText = document.createElement('div');
+    addButtonIconText.classList.add('btn-txt');
+    addButtonIconText.textContent = 'Add Todo';
+    addButtonEl.appendChild(addButtonIconText);
+    /*<button class="icon-btn add-btn">
+    <div class="add-icon"></div>
+    <div class="btn-txt">Add Photo</div>
+    </button>
+*/
     // Sidebar container
     const sidebarContainerEl = document.createElement('aside');
     sidebarContainerEl.classList.add('grid-item', 'sidebar');
