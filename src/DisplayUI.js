@@ -1,5 +1,14 @@
 import { format } from 'date-fns';
 import Menu from './assets/svgs/menu.svg';
+import Add from './assets/svgs/add.svg';
+import Calendar from './assets/svgs/calendar-clear.svg';
+import ContrastOutline from './assets/svgs/contrast-outline.svg';
+import Contrast from './assets/svgs/contrast.svg';
+import Today from './assets/svgs/today.svg';
+import FileTrayFull from './assets/svgs/file-tray-full.svg';
+import FileTray from './assets/svgs/file-tray.svg';
+import Albums from './assets/svgs/albums.svg';
+
 export default class Display {
   loadHome() {
     // main container
@@ -38,15 +47,29 @@ export default class Display {
     addButtonIconText.classList.add('btn-txt');
     addButtonIconText.textContent = 'Add Todo';
     addButtonEl.appendChild(addButtonIconText);
-    /*<button class="icon-btn add-btn">
-    <div class="add-icon"></div>
-    <div class="btn-txt">Add Photo</div>
-    </button>
-*/
     // Sidebar container
     const sidebarContainerEl = document.createElement('aside');
     sidebarContainerEl.classList.add('grid-item', 'sidebar');
     containerEl.appendChild(sidebarContainerEl);
+    // SVG's Containers
+    const svgContainerEl = document.createElement('div');
+    svgContainerEl.classList.add('svg-container');
+    sidebarContainerEl.appendChild(svgContainerEl);
+    // Inbox svg
+    const inboxSvg = new Image();
+    inboxSvg.src = FileTray;
+    inboxSvg.classList.add('inbox-svg', 'sidebar-svg');
+    svgContainerEl.appendChild(inboxSvg);
+    // Today svg
+    const todaySvg = new Image();
+    todaySvg.src = Today;
+    todaySvg.classList.add('today-svg', 'sidebar-svg');
+    svgContainerEl.appendChild(todaySvg);
+    // collections svg
+    const albumsSvg = new Image();
+    albumsSvg.src = Albums;
+    albumsSvg.classList.add('collections-svg', 'sidebar-svg');
+    svgContainerEl.appendChild(albumsSvg);
 
     // _Todo container
     const todoContainerEl = document.createElement('div');

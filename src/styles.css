@@ -107,6 +107,7 @@ body {
   font-weight: 500;
   font-family: 'Libre Franklin';
   font-size: 2rem;
+  margin: 1rem 0;
 }
 
 .add-btn:hover {
