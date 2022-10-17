@@ -3,6 +3,7 @@
   --sidebar-color: #d8def8; /* main color*/
   --todo-container-color: #f5f7fd;
   --font-color: #221646;
+  --light-dark-mode-icon: url('./assets/svgs/contrast-outline.svg');
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,6 +12,7 @@
     --sidebar-color: #8d9cd5; /* main color*/
     --todo-container-color: #6e79a6;
     --font-color: #d4c8f8;
+    --light-dark-mode-icon: url('./assets/svgs/contrast.svg');
   }
 }
 
@@ -60,7 +62,7 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: 2fr 8fr;
+  grid-template-columns: 1.5fr 8fr;
   grid-template-rows: 1fr 12fr;
   grid-template-areas:
     'header header'
@@ -196,9 +198,31 @@ body {
 
 /* -----------ADD BUTTON STYLE ENDS----------- */
 
+.sidebar-svg-container {
+  display: flex;
+}
+
+.svg-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4rem;
+  gap: 4rem;
+}
+
+.sidebar-svg {
+  width: 4rem;
+  height: 4rem;
+}
+
 .sidebar {
   grid-area: sidebar;
   background-color: var(--sidebar-color);
+}
+
+/* Light Dark mode svg */
+.light-dark-mode {
+  background-image: var(--light-dark-mode-icon);
 }
 
 .todo-container {
