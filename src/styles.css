@@ -11,7 +11,7 @@
     --header-color: #617ae2;
     --sidebar-color: #8d9cd5; /* main color*/
     --todo-container-color: #6e79a6;
-    --font-color: #d4c8f8;
+    --font-color: #382d59;
     --light-dark-mode-icon: url('./assets/svgs/contrast.svg');
   }
 }
@@ -197,9 +197,9 @@ body {
 }
 
 /* -----------ADD BUTTON STYLE ENDS----------- */
-
-.sidebar-svg-container {
-  display: flex;
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--sidebar-color);
 }
 
 .svg-container {
@@ -210,18 +210,37 @@ body {
   gap: 4rem;
 }
 
-.sidebar-svg {
-  width: 4rem;
-  height: 4rem;
+.sidebar-svg-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
 }
 
-.sidebar {
-  grid-area: sidebar;
-  background-color: var(--sidebar-color);
+.sidebar-svg-container:hover {
+  background-color: #4e456b;
+  color: white;
+  cursor: pointer;
+}
+
+.light-dark-mode-container {
+  display: flex;
+  /* justify-content: center; */
+}
+
+.sidebar-svg {
+  width: 3rem;
+  height: 3rem;
+  margin-left: 6rem;
+}
+
+.svg-text {
+  align-self: center;
+  font-size: 1.5rem;
+  margin-right: auto;
 }
 
 /* Light Dark mode svg */
-.light-dark-mode {
+.light-dark-mode-svg {
   background-image: var(--light-dark-mode-icon);
 }
 

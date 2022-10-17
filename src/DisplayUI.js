@@ -101,11 +101,18 @@ export default class Display {
     collectionText.classList.add('collection-svg-text', 'svg-text');
     collectionText.textContent = 'Collections';
     collectionContainer.appendChild(collectionText);
+    // light/dark mode container
+    const lightDarkSvgContainer = document.createElement('div');
+    lightDarkSvgContainer.src = Contrast;
+    lightDarkSvgContainer.classList.add(
+      'light-dark-mode-container',
+      'sidebar-svg-container'
+    );
+    svgContainerEl.appendChild(lightDarkSvgContainer);
     // light/dark mode
     const lightDarkSvg = document.createElement('div');
-    lightDarkSvg.src = Contrast;
-    lightDarkSvg.classList.add('light-dark-mode', 'sidebar-svg');
-    svgContainerEl.appendChild(lightDarkSvg);
+    lightDarkSvg.classList.add('light-dark-mode-svg', 'sidebar-svg');
+    lightDarkSvgContainer.appendChild(lightDarkSvg);
 
     // _Todo container
     const todoContainerEl = document.createElement('div');
