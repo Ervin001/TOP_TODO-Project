@@ -120,9 +120,13 @@ export default class Display {
     containerEl.appendChild(todoContainerEl);
   }
 
-  addTodo(data) {}
-  todoItems(array) {}
-  deleteTodo(data) {}
+  addTodo(item) {}
+  todoItems(array) {
+    array.forEach(e => {
+      console.log(e);
+    });
+  }
+  deleteTodo(item) {}
   showForm() {}
   hideForm() {}
   todoMarker(color) {}
