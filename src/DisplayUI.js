@@ -113,6 +113,13 @@ export default class Display {
     const lightDarkSvg = document.createElement('div');
     lightDarkSvg.classList.add('light-dark-mode-svg', 'sidebar-svg');
     lightDarkSvgContainer.appendChild(lightDarkSvg);
+    // light/dark mode text
+    const lightDarkText = document.createElement('p');
+    lightDarkText.classList.add('light-dark-text', 'svg-text');
+    // dark-mode media query matched or not
+    let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    lightDarkText.textContent = `${matched ? 'Dark' : 'Light'}`;
+    lightDarkSvgContainer.appendChild(lightDarkText);
 
     // _Todo container
     const todoContainerEl = document.createElement('div');
