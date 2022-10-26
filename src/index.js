@@ -9,46 +9,34 @@ const dateFormat = format(new Date(), 'MMMM dd, yyyy');
 
 display.loadHome();
 
-const todoExampleArray = [
-  {
-    Title: 'Go to Store',
-    Content: 'Get different things in the store',
-    TimeCreated: 'Today',
-    Id: '000000',
-  },
-  {
-    Title: 'Go to Store',
-    Content: 'Get different things in the store',
-    TimeCreated: 'Today',
-    Id: '000000',
-  },
-  {
-    Title: 'Go to Store',
-    Content: 'Get different things in the store',
-    TimeCreated: 'Today',
-    Id: '000000',
-  },
-  {
-    Title: 'Go to Store',
-    Content: 'Get different things in the store',
-    TimeCreated: 'Today',
-    Id: '000000',
-  },
-];
-
-display.todoItems(todoExampleArray);
+// const todoExampleArray = [
+//   {
+//     title: 'Go to Store',
+//     content: 'Get different things in the store',
+//     date: 'Today',
+//     id: '000000',
+//   },
+// ];
 
 todoLogic.addItemToArray({
-  Title: 'First Todo',
-  Content: 'This is where the body of the information will go',
-  TimeCreated: `${dateFormat}`,
-  Id: '00000001',
+  title: 'First Todo',
+  content: 'This is where the body of the information will go',
+  date: `${dateFormat}`,
+  id: '00000001',
 });
 
+// Adds todo item to array in the logic class
 todoLogic.addItemToArray({
-  Title: 'First Todo',
-  Content: 'This is where the body of the information will go',
-  TimeCreated: `${dateFormat}`,
-  Id: '00000002',
+  title: 'second Todo',
+  content: 'This is where the body of the information will go',
+  date: `${dateFormat}`,
+  id: '00000002',
 });
-todoLogic.displayObject('ss');
+
+// method in logic class passes the same todo item to display class
+todoLogic.passObjectToDisplay({
+  title: 'second Todo',
+  content: 'This is where the body of the information will go',
+  date: `${dateFormat}`,
+  id: '00000002',
+});

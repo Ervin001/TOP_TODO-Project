@@ -127,12 +127,27 @@ export default class Display {
     containerEl.appendChild(todoContainerEl);
   }
 
-  addTodo(item) {}
-  todoItems(array) {
-    array.forEach(e => {
-      console.log(e);
-    });
+  // Returns html
+  createTodoItem(todoObject) {
+    let { title, content, date, id } = todoObject;
+    const todoItemEL = `
+      <div class="todoContainer" data-id="${id}">
+        <div class="checkBox"></div>
+        <div class="main-info">
+          <div class="todo-Title">${title}</div>
+          <div class="todo-Body">${content}</div>
+        </div>
+        <div class="date">${date}</div>
+      </div>
+    `;
+    return todoItemEL;
   }
+
+  addTodoItem(item) {
+    // Logic for adding `todoItem` to DOM
+    console.log(this.todoItem(item));
+  }
+
   deleteTodo(item) {}
   showForm() {}
   hideForm() {}

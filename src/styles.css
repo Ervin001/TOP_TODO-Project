@@ -214,6 +214,8 @@ body {
   display: flex;
   gap: 1rem;
   width: 100%;
+  transition: color 0.5s ease;
+  transition: background-color 0.5s ease;
 }
 
 .sidebar-svg-container:hover {
