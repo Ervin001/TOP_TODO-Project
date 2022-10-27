@@ -32,11 +32,3 @@ todoLogic.addItemToArray({
   date: `${dateFormat}`,
   id: '00000002',
 });
-
-// method in logic class passes the same todo item to display class
-todoLogic.passObjectToDisplay({
-  title: 'second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});

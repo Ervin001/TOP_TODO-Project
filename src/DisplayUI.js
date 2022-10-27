@@ -131,13 +131,13 @@ export default class Display {
   createTodoItem(todoObject) {
     let { title, content, date, id } = todoObject;
     const todoItemEL = `
-      <div class="todoContainer" data-id="${id}">
-        <div class="checkBox"></div>
-        <div class="main-info">
+      <div class="single-todo-item-container" data-id="${id}">
+        <div class="checkBox-container td-item"></div>
+        <div class="main-info-container td-item">
           <div class="todo-Title">${title}</div>
           <div class="todo-Body">${content}</div>
         </div>
-        <div class="date">${date}</div>
+        <div class="date td-item">${date}</div>
       </div>
     `;
     return todoItemEL;
@@ -145,7 +145,9 @@ export default class Display {
 
   addTodoItem(item) {
     // Logic for adding `todoItem` to DOM
-    console.log(this.todoItem(item));
+    const todoContainerEl = document.querySelector('.todo-container');
+    // todoContainerEl.appendChild(item);
+    todoContainerEl.insertAdjacentHTML('beforeend', item);
   }
 
   deleteTodo(item) {}

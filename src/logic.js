@@ -10,9 +10,10 @@ export default class TodoLogic {
 
   addItemToArray(item) {
     this.#todoObjectsArray.push(item);
+    this.#passObjectToDisplay(item);
   }
 
-  passObjectToDisplay(obj) {
-    display.createTodoItem(obj);
+  #passObjectToDisplay(obj) {
+    display.addTodoItem(display.createTodoItem(obj));
   }
 }

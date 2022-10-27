@@ -248,5 +248,18 @@ body {
 
 .todo-container {
   grid-area: main-content;
+  display: flex;
+  flex-direction: column;
   background-color: var(--todo-container-color);
+}
+
+.single-todo-item-container {
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  font-size: 2.5rem;
+}
+
+.td-item {
+  flex-grow: 1;
 }
