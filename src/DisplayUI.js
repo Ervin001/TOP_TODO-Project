@@ -132,7 +132,11 @@ export default class Display {
     let { title, content, date, id } = todoObject;
     const todoItemEL = `
       <div class="single-todo-item-container" data-id="${id}">
-        <div class="checkBox-container td-item"></div>
+        <div class="checkBox-container td-item">
+
+            <input type="checkbox" id="checkbox" name="horns">
+
+        </div>
         <div class="main-info-container td-item">
           <div class="todo-Title">${title}</div>
           <div class="todo-Body">${content}</div>

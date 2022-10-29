@@ -39,6 +39,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Libre Franklin-bold';
+  src: url('./assets/fonts/Libre_Franklin/static/LibreFranklin-Bold.ttf')
+    format('truetype');
+  /* font-weight: 500; */
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -251,15 +259,48 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--todo-container-color);
+  overflow-y: auto;
 }
 
 .single-todo-item-container {
   display: flex;
+  flex-grow: 0;
+
   height: 4rem;
   width: 100%;
+  padding: 1rem 0;
   font-size: 2.5rem;
+  border-bottom: 0.5px solid #182043;
+  font-family: 'Libre Franklin';
 }
 
 .td-item {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.checkBox-container {
+  flex-grow: 0;
+  margin: 0 2rem;
+}
+
+#checkbox {
+  align-self: center;
+}
+
+.main-info-container {
+  padding-left: 2rem;
+}
+
+.todo-Title {
+  font-size: 2rem;
+  font-family: 'Libre Franklin-bold';
+}
+
+.date {
+  align-items: flex-end;
+  font-size: 1.2rem;
+  margin-right: 2rem;
 }
