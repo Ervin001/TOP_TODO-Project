@@ -62,6 +62,7 @@ body {
   font-size: 4rem;
   /* font-family: 'Libre Franklin'; */
   color: var(--font-color);
+  position: relative;
 }
 
 .hidden {
@@ -303,4 +304,39 @@ body {
   align-items: flex-end;
   font-size: 1.2rem;
   margin-right: 2rem;
+}
+
+/* ----------------------FORM INFO-------------------------- */
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  /* height: 60%; */
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: rgb(193, 193, 193);
+  border-radius: 8px;
+  box-shadow: 1px 4px 10px 1px rgba(82, 82, 82, 0.813);
+}
+
+.form-title {
+  padding-top: 2rem;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 2rem 0;
+}
+
+textarea {
+  resize: none;
 }

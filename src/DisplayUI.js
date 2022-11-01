@@ -125,6 +125,32 @@ export default class Display {
     const todoContainerEl = document.createElement('div');
     todoContainerEl.classList.add('grid-item', 'todo-container');
     containerEl.appendChild(todoContainerEl);
+
+    // Form container
+    document.body.insertAdjacentHTML('beforeend', this.form());
+  }
+
+  form() {
+    return `
+      <div class="form-container">
+        <h1 class="form-title frm-chld">New Todo</h1>
+        <form action="" method="get" class="todo-form frm-chld">
+          <label for="title">Enter Title:</label>
+          
+          <input type="text" name="title" id="title" />
+          
+          <label for="date">Date:</label>
+          
+          <input type="date" name="date" id="date" />
+          
+          <label for="description">Enter info</label>
+          
+          <textArea name"description" id="description" cols="30" rows="10"></textArea>
+          
+          <input type="submit" id="submit-id" value="Add" />
+        </form>
+      </div>
+    `;
   }
 
   // Returns html
@@ -134,10 +160,10 @@ export default class Display {
       <div class="single-todo-item-container" data-id="${id}">
         <div class="checkBox-container td-item">
 
-            <input type="checkbox" id="checkbox" name="horns">
+            <input type="checkbox" id="checkbox" name="checkbox">
 
         </div>
-        <div class="main-info-container td-item">
+        <div class="description-container td-item">
           <div class="todo-Title">${title}</div>
           <div class="todo-Body">${content}</div>
         </div>
@@ -155,7 +181,10 @@ export default class Display {
   }
 
   deleteTodo(item) {}
-  showForm() {}
+
+  showForm(e) {
+    console.log(e);
+  }
   hideForm() {}
   todoMarker(color) {}
 }

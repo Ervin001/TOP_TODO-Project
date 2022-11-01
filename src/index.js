@@ -8,7 +8,8 @@ const todoLogic = new TodoLogic();
 const dateFormat = format(new Date(), 'MMMM dd, yyyy');
 
 display.loadHome();
-
+const buttonEl = document.querySelector('.add-btn');
+buttonEl.addEventListener('click', display.showForm);
 // const todoExampleArray = [
 //   {
 //     title: 'Go to Store',
@@ -32,80 +33,9 @@ todoLogic.addItemToArray({
   date: `${dateFormat}`,
   id: '00000002',
 });
+
 todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-todoLogic.addItemToArray({
-  title: 'Second Todo',
+  title: 'Third Todo',
   content: 'This is where the body of the information will go',
   date: `${dateFormat}`,
   id: '00000002',
