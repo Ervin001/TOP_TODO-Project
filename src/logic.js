@@ -16,4 +16,6 @@ export default class TodoLogic {
   #passObjectToDisplay(obj) {
     display.addTodoItem(display.createTodoItem(obj));
   }
+
+  formInputs() {}
 }

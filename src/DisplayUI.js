@@ -137,17 +137,17 @@ export default class Display {
         <form action="" method="get" class="todo-form frm-chld">
           <label for="title">Enter Title:</label>
           
-          <input type="text" name="title" id="title" />
+          <input type="text" name="title" id="title" class="inpt" required/>
           
           <label for="date">Date:</label>
           
-          <input type="date" name="date" id="date" />
+          <input type="date" name="date" id="date" class="inpt" required/>
           
-          <label for="description">Enter info</label>
+          <label for="description">Enter info:</label>
           
-          <textArea name"description" id="description" cols="30" rows="10"></textArea>
+          <textArea name"description" id="description" class="inpt" required cols="30" rows="10"></textArea>
           
-          <input type="submit" id="submit-id" value="Add" />
+          <input type="submit" id="submit-id" value="Add"  class="inpt" />
         </form>
       </div>
     `;
@@ -160,7 +160,7 @@ export default class Display {
       <div class="single-todo-item-container" data-id="${id}">
         <div class="checkBox-container td-item">
 
-            <input type="checkbox" id="checkbox" name="checkbox">
+        <input type="checkbox" id="checkbox" name="checkbox">
 
         </div>
         <div class="description-container td-item">

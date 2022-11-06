@@ -4,6 +4,8 @@
   --todo-container-color: #f5f7fd;
   --font-color: #221646;
   --light-dark-mode-icon: url('./assets/svgs/contrast-outline.svg');
+  --form-background-color: #b9c4f2;
+  --form-text-color: #221646;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,6 +15,8 @@
     --todo-container-color: #6e79a6;
     --font-color: #382d59;
     --light-dark-mode-icon: url('./assets/svgs/contrast.svg');
+    --form-background-color: #4f6bdf;
+    --form-text-color: #ffffff;
   }
 }
 
@@ -320,13 +324,16 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 
-  background-color: rgb(193, 193, 193);
+  background-color: var(--form-background-color);
+  color: var(--form-text-color);
   border-radius: 8px;
   box-shadow: 1px 4px 10px 1px rgba(82, 82, 82, 0.813);
 }
 
 .form-title {
   padding-top: 2rem;
+  font-size: 2.5rem;
+  font-family: 'Libre Franklin-bold';
 }
 
 .todo-form {
@@ -334,9 +341,23 @@ body {
   flex-direction: column;
   gap: 1rem;
 
+  /* font: inherit; */
+  font-family: 'Libre Franklin-bold', 'Inter';
+  font-size: 2rem;
   padding: 2rem 0;
 }
 
 textarea {
   resize: none;
+  padding-top: 0.5rem;
+}
+
+input {
+}
+
+.inpt {
+  border-radius: 4px;
+  border: none;
+  font-family: 'Libre Franklin';
+  padding-left: 1rem;
 }

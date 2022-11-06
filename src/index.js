@@ -9,6 +9,8 @@ const dateFormat = format(new Date(), 'MMMM dd, yyyy');
 
 display.loadHome();
 const buttonEl = document.querySelector('.add-btn');
+const submitEl = document.getElementById('submit-id');
+
 buttonEl.addEventListener('click', display.showForm);
 // const todoExampleArray = [
 //   {
@@ -18,6 +20,17 @@ buttonEl.addEventListener('click', display.showForm);
 //     id: '000000',
 //   },
 // ];
+
+submitEl.addEventListener('click', inputValues);
+
+function inputValues(e) {
+  e.preventDefault();
+
+  const titleInputValue = document.getElementById('title').value;
+  const dateInputValue = document.getElementById('date').value;
+  const bodyInputValue = document.getElementById('description').value;
+  console.log(titleInputValue, dateInputValue, bodyInputValue);
+}
 
 todoLogic.addItemToArray({
   title: 'First Todo',
