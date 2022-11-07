@@ -132,7 +132,7 @@ export default class Display {
 
   form() {
     return `
-      <div class="form-container">
+      <div class="form-container hidden">
         <h1 class="form-title frm-chld">New Todo</h1>
         <form action="" method="get" class="todo-form frm-chld">
           <label for="title">Enter Title:</label>
@@ -182,8 +182,9 @@ export default class Display {
 
   deleteTodo(item) {}
 
-  showForm(e) {
-    console.log(e);
+  toggleForm() {
+    const formEl = document.querySelector('.form-container');
+    formEl.classList.toggle('hidden');
   }
   hideForm() {}
   todoMarker(color) {}

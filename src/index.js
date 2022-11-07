@@ -11,7 +11,7 @@ display.loadHome();
 const buttonEl = document.querySelector('.add-btn');
 const submitEl = document.getElementById('submit-id');
 
-buttonEl.addEventListener('click', display.showForm);
+buttonEl.addEventListener('click', display.toggleForm);
 // const todoExampleArray = [
 //   {
 //     title: 'Go to Store',
@@ -26,30 +26,31 @@ submitEl.addEventListener('click', inputValues);
 function inputValues(e) {
   e.preventDefault();
 
-  const titleInputValue = document.getElementById('title').value;
-  const dateInputValue = document.getElementById('date').value;
-  const bodyInputValue = document.getElementById('description').value;
-  console.log(titleInputValue, dateInputValue, bodyInputValue);
+  // Values from the form
+  const titleInputValue = document.getElementById('title');
+  const dateInputValue = document.getElementById('date');
+  const bodyInputValue = document.getElementById('description');
+  let date = Date.now();
+  date += '';
+
+  if (
+    titleInputValue.value !== '' ||
+    dateInputValue.value !== '' ||
+    bodyInputValue.value !== ''
+  ) {
+    // Form values are sent to logic.js
+    todoLogic.createTodoObj(
+      titleInputValue.value,
+      dateInputValue.value,
+      bodyInputValue.value,
+      date.slice(4)
+    );
+
+    // Form values are cleared
+    titleInputValue.value = '';
+    dateInputValue.value = '';
+    bodyInputValue.value = '';
+    const formEl = document.querySelector('.todo-form');
+    display.toggleForm();
+  }
 }
-
-todoLogic.addItemToArray({
-  title: 'First Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000001',
-});
-
-// Adds todo item to array in the logic class
-todoLogic.addItemToArray({
-  title: 'Second Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
-
-todoLogic.addItemToArray({
-  title: 'Third Todo',
-  content: 'This is where the body of the information will go',
-  date: `${dateFormat}`,
-  id: '00000002',
-});
