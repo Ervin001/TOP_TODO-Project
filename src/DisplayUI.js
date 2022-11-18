@@ -156,6 +156,7 @@ export default class Display {
   // Returns html
   createTodoItem(todoObject) {
     let { title, content, date, id } = todoObject;
+
     const todoItemEL = `
       <div class="single-todo-item-container" data-id="${id}">
         <div class="checkBox-container td-item">
@@ -173,11 +174,12 @@ export default class Display {
     return todoItemEL;
   }
 
+  // DOM: Renders task
   addTodoItem(item) {
     // Logic for adding `todoItem` to DOM
     const todoContainerEl = document.querySelector('.todo-container');
     // todoContainerEl.appendChild(item);
-    todoContainerEl.insertAdjacentHTML('beforeend', item);
+    todoContainerEl.insertAdjacentHTML('afterbegin', item);
   }
 
   deleteTodo(item) {}
@@ -186,6 +188,9 @@ export default class Display {
     const formEl = document.querySelector('.form-container');
     formEl.classList.toggle('hidden');
   }
+
+  checkLocalStorage() {}
+
   hideForm() {}
   todoMarker(color) {}
 }
