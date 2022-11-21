@@ -179,6 +179,7 @@ export default class Display {
     // Logic for adding `todoItem` to DOM
     const todoContainerEl = document.querySelector('.todo-container');
     // todoContainerEl.appendChild(item);
+    console.log(todoContainerEl);
     todoContainerEl.insertAdjacentHTML('afterbegin', item);
   }
 
