@@ -10,6 +10,9 @@ const dateFormat = format(new Date(), 'MMMM dd, yyyy');
 display.loadHome();
 const buttonEl = document.querySelector('.add-btn');
 const submitEl = document.getElementById('submit-id');
+const taskEl = document.querySelectorAll('.single-todo-item-container');
+
+console.log(taskEl);
 
 buttonEl.addEventListener('click', display.toggleForm);
 // const todoExampleArray = [

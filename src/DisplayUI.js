@@ -176,7 +176,7 @@ export default class Display {
 
   // DOM: Renders task
   addTodoItem(item) {
-    // test
+    // Logic for adding `todoItem` to DOM
     // Check if DOM is loaded
     if (document.readyState == 'complete') {
       const todoContainerEl = document.querySelector('.todo-container');
@@ -187,7 +187,6 @@ export default class Display {
       const todoContainerEl = document.querySelector('.todo-container');
       todoContainerEl.insertAdjacentHTML('afterbegin', item);
     });
-    // Logic for adding `todoItem` to DOM
   }
 
   deleteTodo(item) {}
@@ -200,5 +199,6 @@ export default class Display {
   checkLocalStorage() {}
 
   hideForm() {}
-  todoMarker(color) {}
+
+  editTask(item, { values }) {}
 }
