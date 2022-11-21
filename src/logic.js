@@ -53,13 +53,3 @@ export default class TodoLogic {
 
   formInputs() {}
 }
-
-/* Stackoverflow answer
-document.addEventListener("DOMContentLoaded", function() { 
-    // this function runs when the DOM is ready, i.e. when the document has been parsed
-    document.querySelector('input[type=file]')
-        .addEventListener('change', function(event){
-            ...
-         }
-});
- */

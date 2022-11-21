@@ -176,11 +176,18 @@ export default class Display {
 
   // DOM: Renders task
   addTodoItem(item) {
+    // test
+    // Check if DOM is loaded
+    if (document.readyState == 'complete') {
+      const todoContainerEl = document.querySelector('.todo-container');
+      todoContainerEl.insertAdjacentHTML('afterbegin', item);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const todoContainerEl = document.querySelector('.todo-container');
+      todoContainerEl.insertAdjacentHTML('afterbegin', item);
+    });
     // Logic for adding `todoItem` to DOM
-    const todoContainerEl = document.querySelector('.todo-container');
-    // todoContainerEl.appendChild(item);
-    console.log(todoContainerEl);
-    todoContainerEl.insertAdjacentHTML('afterbegin', item);
   }
 
   deleteTodo(item) {}
