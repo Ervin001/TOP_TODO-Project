@@ -182,7 +182,6 @@ export default class Display {
       const todoContainerEl = document.querySelector('.todo-container');
       todoContainerEl.insertAdjacentHTML('afterbegin', item);
     }
-
     document.addEventListener('DOMContentLoaded', function () {
       const todoContainerEl = document.querySelector('.todo-container');
       todoContainerEl.insertAdjacentHTML('afterbegin', item);
