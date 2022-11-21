@@ -199,5 +199,9 @@ export default class Display {
 
   hideForm() {}
 
+  items(e) {
+    console.log(e);
+  }
+
   editTask(item, { values }) {}
 }

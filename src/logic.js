@@ -18,7 +18,7 @@ export default class TodoLogic {
   }
 
   logTodos() {
-    return console.log(this.#todoObjectsArray);
+    return this.#todoObjectsArray;
   }
   // main func doing the work
   #addItemToArray(item) {
