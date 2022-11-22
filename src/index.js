@@ -2,7 +2,6 @@ import './styles.css';
 import Display from './displayUI.js';
 import TodoLogic from './logic.js';
 import { format } from 'date-fns';
-import { debug } from 'webpack';
 
 const display = new Display();
 const todoLogic = new TodoLogic();
@@ -12,8 +11,12 @@ display.loadHome();
 const buttonEl = document.querySelector('.add-btn');
 const submitEl = document.getElementById('submit-id');
 const taskEl = document.querySelectorAll('.single-todo-item-container');
+const todoCont = document.querySelector('.todo-container');
 
-console.log(taskEl);
+// display.getContainerDiv('s');
+
+console.log(display.testing('Hello World'));
+todoCont.addEventListener('click', display.getContainerDiv);
 
 buttonEl.addEventListener('click', display.toggleForm);
 // const todoExampleArray = [

@@ -182,6 +182,7 @@ export default class Display {
       const todoContainerEl = document.querySelector('.todo-container');
       todoContainerEl.insertAdjacentHTML('afterbegin', item);
     }
+
     document.addEventListener('DOMContentLoaded', function () {
       const todoContainerEl = document.querySelector('.todo-container');
       todoContainerEl.insertAdjacentHTML('afterbegin', item);
@@ -195,12 +196,16 @@ export default class Display {
     formEl.classList.toggle('hidden');
   }
 
-  checkLocalStorage() {}
+  getContainerDiv(e) {
+    // e.path.forEach(el => {
+    //   if (el.className !== 'single-todo-item-container') return;
+    //   console.log(el);
+    // });
+    return e;
+  }
 
-  hideForm() {}
-
-  items(e) {
-    console.log(e);
+  testing(e) {
+    return e;
   }
 
   editTask(item, { values }) {}
