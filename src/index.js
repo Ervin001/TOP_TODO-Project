@@ -1,6 +1,7 @@
 import './styles.css';
 import Display from './displayUI.js';
 import TodoLogic from './logic.js';
+
 import { format } from 'date-fns';
 
 const display = new Display();
@@ -13,10 +14,27 @@ const submitEl = document.getElementById('submit-id');
 const taskEl = document.querySelectorAll('.single-todo-item-container');
 const todoCont = document.querySelector('.todo-container');
 
-// display.getContainerDiv('s');
+// selecting todos
+todoCont.addEventListener('click', function (e) {
+  // check grandchildEl
+  const grandKidsEl =
+    e.target.className === 'todo-Title' || e.target.className === 'todo-Body';
+  // check childEl
+  const childEl =
+    e.target.className === 'checkBox-container td-item' ||
+    e.target.className === 'description-container td-item' ||
+    e.target.className === 'date td-item';
+  // parentEl
+  const parentEl = e.target.className === 'single-todo-item-container';
 
-console.log(display.testing('Hello World'));
-todoCont.addEventListener('click', display.getContainerDiv);
+  if (grandKidsEl) {
+    return display.selectedTask(e.target.parentElement.parentElement);
+  } else if (childEl) {
+    return display.selectedTask(e.target.parentElement);
+  } else if (parentEl) {
+    return display.selectedTask(e.target);
+  }
+});
 
 buttonEl.addEventListener('click', display.toggleForm);
 // const todoExampleArray = [
