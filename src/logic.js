@@ -54,15 +54,34 @@ export default class TodoLogic {
   taskDiv(div) {
     const formEl = document.querySelector('.form-container');
 
-    console.log(div);
+    // div details
     const divObj = {
+      // title
       divT: div.children[1].children[0].textContent,
+      // body
       divC: div.children[1].children[1].textContent,
+      // date
       divD: div.children[2].textContent,
       divDataset: div.dataset.id,
     };
 
-    console.log(divObj);
+    const { divT, divC, divD, divDataset } = divObj;
+
+    console.log(div);
+
+    // title
+    formEl.children[1][0].textContent = divT;
+    formEl.children[1][0].value = divT;
+    // date
+    formEl.children[1][1].textContent = divD;
+    formEl.children[1][1].value = divD;
+    // body
+    formEl.children[1][2].value = divC;
+    formEl.children[1][2].value = divC;
+    // form ID
+    formEl.dataset.id = divDataset;
+
+    // console.log(titleFormField);
   }
 
   /**

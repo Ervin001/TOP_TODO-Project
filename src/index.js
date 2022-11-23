@@ -35,13 +35,13 @@ todoCont.addEventListener('click', function (e) {
 
   // Returns the TODO DIV chosen
   if (grandKidsEl) {
-    // display.toggleForm();
+    display.toggleForm();
     return todoLogic.taskDiv(e.target.parentElement.parentElement);
   } else if (childEl) {
-    // display.toggleForm();
+    display.toggleForm();
     return todoLogic.taskDiv(e.target.parentElement);
   } else if (parentEl) {
-    // display.toggleForm();
+    display.toggleForm();
     return todoLogic.taskDiv(e.target);
   }
 });
