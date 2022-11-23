@@ -196,14 +196,5 @@ export default class Display {
     formEl.classList.toggle('hidden');
   }
 
-  /** Code being used in eventlistener */
-  selectedTask(task) {
-    return console.log(task);
-  }
-
-  testing(e) {
-    return e;
-  }
-
-  editTask(item, { values }) {}
+  editedTodo(task, newInfo) {}
 }

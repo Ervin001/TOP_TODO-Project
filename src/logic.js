@@ -51,5 +51,16 @@ export default class TodoLogic {
     });
   }
 
+  taskDiv(div) {
+    return console.log(div);
+  }
+
+  /**
+   * @param {object} task Todo item Div
+   * @param {object} param This object will have the updated values fo the updated todo item
+   * param will set new values in todoItem inside #todoObjectsArray and update the values in the @task then pass info to DOM for update
+   */
+  editTask(task, param) {}
+
   formInputs() {}
 }

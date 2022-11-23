@@ -26,13 +26,21 @@ todoCont.addEventListener('click', function (e) {
     e.target.className === 'date td-item';
   // parentEl
   const parentEl = e.target.className === 'single-todo-item-container';
+  // selectors for todo items to edit
+  const checkboxEl = document.getElementById('checkbox');
+  const titleEl = document.querySelector('.todo-Title');
+  const bodyEl = document.querySelector('.todo-Body');
+  const dateEl = document.querySelector('.date');
+  //
+  console.log(`${checkboxEl.value} || ${titleEl.textContent} || ${bodyEl.textContent} || ${dateEl.textContent}
+    `);
 
   if (grandKidsEl) {
-    return display.selectedTask(e.target.parentElement.parentElement);
+    return todoLogic.taskDiv(e.target.parentElement.parentElement);
   } else if (childEl) {
-    return display.selectedTask(e.target.parentElement);
+    return todoLogic.taskDiv(e.target.parentElement);
   } else if (parentEl) {
-    return display.selectedTask(e.target);
+    return todoLogic.taskDiv(e.target);
   }
 });
 
