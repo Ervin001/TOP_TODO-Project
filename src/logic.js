@@ -52,7 +52,17 @@ export default class TodoLogic {
   }
 
   taskDiv(div) {
-    return console.log(div);
+    const formEl = document.querySelector('.form-container');
+
+    console.log(div);
+    const divObj = {
+      divT: div.children[1].children[0].textContent,
+      divC: div.children[1].children[1].textContent,
+      divD: div.children[2].textContent,
+      divDataset: div.dataset.id,
+    };
+
+    console.log(divObj);
   }
 
   /**

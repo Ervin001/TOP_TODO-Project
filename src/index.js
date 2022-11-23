@@ -15,6 +15,7 @@ const taskEl = document.querySelectorAll('.single-todo-item-container');
 const todoCont = document.querySelector('.todo-container');
 
 // selecting todos
+let task;
 todoCont.addEventListener('click', function (e) {
   // check grandchildEl
   const grandKidsEl =
@@ -31,15 +32,16 @@ todoCont.addEventListener('click', function (e) {
   const titleEl = document.querySelector('.todo-Title');
   const bodyEl = document.querySelector('.todo-Body');
   const dateEl = document.querySelector('.date');
-  //
-  console.log(`${checkboxEl.value} || ${titleEl.textContent} || ${bodyEl.textContent} || ${dateEl.textContent}
-    `);
 
+  // Returns the TODO DIV chosen
   if (grandKidsEl) {
+    // display.toggleForm();
     return todoLogic.taskDiv(e.target.parentElement.parentElement);
   } else if (childEl) {
+    // display.toggleForm();
     return todoLogic.taskDiv(e.target.parentElement);
   } else if (parentEl) {
+    // display.toggleForm();
     return todoLogic.taskDiv(e.target);
   }
 });

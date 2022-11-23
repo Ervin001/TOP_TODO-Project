@@ -196,5 +196,20 @@ export default class Display {
     formEl.classList.toggle('hidden');
   }
 
+  addExistingInputFields(data) {
+    const formEl = document.querySelector('.form-container');
+
+    console.log(formEl);
+    // Title
+    formEl.childNodes[3][0].value = data;
+    formEl.childNodes[3][0].textContent = data;
+    // date
+    formEl.childNodes[3][1].textContent = data;
+    formEl.childNodes[3][1].textContent = data;
+    // main-content
+    formEl.childNodes[3][2].textContent = data;
+    formEl.childNodes[3][2].textContent = data;
+  }
+
   editedTodo(task, newInfo) {}
 }
