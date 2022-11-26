@@ -53,6 +53,7 @@ export default class TodoLogic {
 
   taskDiv(div) {
     const formEl = document.querySelector('.form-container');
+    const allTaskEl = document.querySelectorAll('.single-todo-item-container');
 
     // div details
     const divObj = {
@@ -67,8 +68,6 @@ export default class TodoLogic {
 
     const { divT, divC, divD, divDataset } = divObj;
 
-    this.getDivIndex(div);
-
     // title
     formEl.children[1][0].textContent = divT;
     formEl.children[1][0].value = divT;
@@ -81,14 +80,15 @@ export default class TodoLogic {
     // form ID
   }
 
-  // return index of div
-  getDivIndex(div) {
+  getDivIndex(divEl) {
+    let element;
     const allTaskEl = document.querySelectorAll('.single-todo-item-container');
     allTaskEl.forEach((task, i) => {
-      if (task.dataset.id === div.dataset.id) {
-        console.log(i);
+      if (task.dataset.id === divEl.dataset.id) {
+        return (element = i);
       }
     });
+    return element;
   }
 
   /**

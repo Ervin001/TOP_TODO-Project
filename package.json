@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
-    "build": "webpack"
+    "build": "webpack",
+    "glive": "live-server --browser=\"google chrome\" --open=\"dist/index.html\"",
+    "flive": "live-server --browser=\"firefox\" --open=\"dist/index.html\""
   },
   "repository": {
     "type": "git",
