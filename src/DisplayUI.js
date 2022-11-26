@@ -128,6 +128,9 @@ export default class Display {
 
     // Form container
     document.body.insertAdjacentHTML('beforeend', this.form());
+
+    // Replacement Form
+    document.body.insertAdjacentHTML('beforeend', this.replaceTaskForm());
   }
 
   form() {
@@ -148,6 +151,29 @@ export default class Display {
           <textArea name"description" id="description" class="inpt" required cols="30" rows="10"></textArea>
           
           <input type="submit" id="submit-id" value="Add"  class="inpt" />
+        </form>
+      </div>
+    `;
+  }
+
+  replaceTaskForm() {
+    return `
+      <div class="replacement-form-container hidden">
+        <h1 class="form-title frm-chld">Replacement Form</h1>
+        <form action="" method="get" class="replace-todo-form frm-chld">
+          <label for="title-rp">Enter Title:</label>
+          
+          <input type="text" name="title-rp" id="title-rp" class="inpt" required/>
+          
+          <label for="date-rp">Date:</label>
+          
+          <input type="date" name="date-rp" id="date-rp" class="inpt" required/>
+          
+          <label for="description-rp">Enter info:</label>
+          
+          <textArea name"description-rp" id="description-rp" class="inpt" required cols="30" rows="10"></textArea>
+          
+          <input type="submit" id="submit-replaced-id" value="Add"  class="inpt" />
         </form>
       </div>
     `;
@@ -196,8 +222,13 @@ export default class Display {
     formEl.classList.toggle('hidden');
   }
 
+  toggleReplaceTaskForm() {
+    const formEl = document.querySelector('.replacement-form-container');
+    formEl.classList.toggle('hidden');
+  }
+
   addExistingInputFields(data) {
-    const formEl = document.querySelector('.form-container');
+    const formEl = document.querySelector('.replacement-form-container');
 
     console.log(formEl);
     // Title

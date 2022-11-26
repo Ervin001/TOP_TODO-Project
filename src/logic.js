@@ -51,8 +51,14 @@ export default class TodoLogic {
     });
   }
 
+  //This function will replace the task in the array holding all the task
+  editTask({ info }, index) {
+    console.log(info);
+  }
+
+  // This function will fill inputs with selected div
   taskDiv(div) {
-    const formEl = document.querySelector('.form-container');
+    const replaceFormEl = document.querySelector('.replacement-form-container');
     const allTaskEl = document.querySelectorAll('.single-todo-item-container');
 
     // div details
@@ -69,14 +75,14 @@ export default class TodoLogic {
     const { divT, divC, divD, divDataset } = divObj;
 
     // title
-    formEl.children[1][0].textContent = divT;
-    formEl.children[1][0].value = divT;
+    replaceFormEl.children[1][0].textContent = divT;
+    replaceFormEl.children[1][0].value = divT;
     // date
-    formEl.children[1][1].textContent = divD;
-    formEl.children[1][1].value = divD;
+    replaceFormEl.children[1][1].textContent = divD;
+    replaceFormEl.children[1][1].value = divD;
     // body
-    formEl.children[1][2].value = divC;
-    formEl.children[1][2].value = divC;
+    replaceFormEl.children[1][2].value = divC;
+    replaceFormEl.children[1][2].value = divC;
     // form ID
   }
 

@@ -11,11 +11,11 @@ const dateFormat = format(new Date(), 'MMMM dd, yyyy');
 display.loadHome();
 const buttonEl = document.querySelector('.add-btn');
 const submitEl = document.getElementById('submit-id');
+const submitReplacedEl = document.getElementById('submit-replaced-id');
 const taskEl = document.querySelectorAll('.single-todo-item-container');
 const todoCont = document.querySelector('.todo-container');
 
-// selecting todos
-let task;
+// EventListener for Tasks
 todoCont.addEventListener('click', function (e) {
   // check grandchildEl
   const grandKidsEl =
@@ -35,13 +35,13 @@ todoCont.addEventListener('click', function (e) {
 
   // Returns the TODO DIV chosen
   if (grandKidsEl) {
-    display.toggleForm();
+    display.toggleReplaceTaskForm();
     return todoLogic.taskDiv(e.target.parentElement.parentElement);
   } else if (childEl) {
-    display.toggleForm();
+    display.toggleReplaceTaskForm();
     return todoLogic.taskDiv(e.target.parentElement);
   } else if (parentEl) {
-    display.toggleForm();
+    display.toggleReplaceTaskForm();
     return todoLogic.taskDiv(e.target);
   }
 });
