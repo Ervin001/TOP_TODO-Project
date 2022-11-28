@@ -56,8 +56,45 @@ buttonEl.addEventListener('click', display.toggleForm);
 //   },
 // ];
 
+submitReplacedEl.addEventListener('click', replacedValues);
+
 submitEl.addEventListener('click', inputValues);
 
+// for edited task
+function replacedValues(e) {
+  e.preventDefault();
+
+  // Values from the form
+  const titleInputValue = document.getElementById('title-rp');
+  const dateInputValue = document.getElementById('date-rp');
+  const bodyInputValue = document.getElementById('description-rp');
+  let date = Date.now();
+  date += '';
+  date.slice(4);
+
+  if (
+    titleInputValue.value !== '' ||
+    dateInputValue.value !== '' ||
+    bodyInputValue.value !== ''
+  ) {
+    // Form values are sent to logic.js
+    // This code needs to be replaced with a method that will replace the selected task with the new information
+    let tIV = titleInputValue.value;
+    let dIV = dateInputValue.value;
+    let bIV = bodyInputValue.value;
+
+    todoLogic.editTask({ tIV, dIV, bIV, date });
+
+    // Form values are cleared
+    titleInputValue.value = '';
+    dateInputValue.value = '';
+    bodyInputValue.value = '';
+
+    display.toggleForm();
+  }
+}
+
+// for new tasks
 function inputValues(e) {
   e.preventDefault();
 

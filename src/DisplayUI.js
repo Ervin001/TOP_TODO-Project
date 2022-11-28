@@ -140,7 +140,7 @@ export default class Display {
         <form action="" method="get" class="todo-form frm-chld">
           <label for="title">Enter Title:</label>
           
-          <input type="text" name="title" id="title" class="inpt" required/>
+          <input type="text" name="title" id="title" class="inpt" required autofocus/>
           
           <label for="date">Date:</label>
           
@@ -163,7 +163,7 @@ export default class Display {
         <form action="" method="get" class="replace-todo-form frm-chld">
           <label for="title-rp">Enter Title:</label>
           
-          <input type="text" name="title-rp" id="title-rp" class="inpt" required/>
+          <input type="text" name="title-rp" id="title-rp" class="inpt" autofocus required/>
           
           <label for="date-rp">Date:</label>
           

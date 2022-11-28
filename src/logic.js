@@ -51,11 +51,6 @@ export default class TodoLogic {
     });
   }
 
-  //This function will replace the task in the array holding all the task
-  editTask({ info }, index) {
-    console.log(info);
-  }
-
   // This function will fill inputs with selected div
   taskDiv(div) {
     const replaceFormEl = document.querySelector('.replacement-form-container');
@@ -102,7 +97,9 @@ export default class TodoLogic {
    * @param {object} param This object will have the updated values fo the updated todo item
    * param will set new values in todoItem inside #todoObjectsArray and update the values in the @task then pass info to DOM for update
    */
-  editTask(task, param) {}
+  editTask(options, param) {
+    console.log(options);
+  }
 
   formInputs() {}
 }
