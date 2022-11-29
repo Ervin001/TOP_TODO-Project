@@ -27,11 +27,6 @@ todoCont.addEventListener('click', function (e) {
     e.target.className === 'date td-item';
   // parentEl
   const parentEl = e.target.className === 'single-todo-item-container';
-  // selectors for todo items to edit
-  const checkboxEl = document.getElementById('checkbox');
-  const titleEl = document.querySelector('.todo-Title');
-  const bodyEl = document.querySelector('.todo-Body');
-  const dateEl = document.querySelector('.date');
 
   // Returns the TODO DIV chosen
   if (grandKidsEl) {
@@ -90,7 +85,7 @@ function replacedValues(e) {
     dateInputValue.value = '';
     bodyInputValue.value = '';
 
-    display.toggleForm();
+    display.toggleReplaceTaskForm();
   }
 }
 

@@ -3,6 +3,7 @@ import Display from './displayUI';
 const display = new Display();
 export default class TodoLogic {
   #todoObjectsArray = [];
+  #taskIndex;
 
   constructor() {
     this.#getLocalStorage();
@@ -79,9 +80,12 @@ export default class TodoLogic {
     replaceFormEl.children[1][2].value = divC;
     replaceFormEl.children[1][2].value = divC;
     // form ID
+
+    // getting the index
+    this.#taskIndex = this.#getDivIndex(div);
   }
 
-  getDivIndex(divEl) {
+  #getDivIndex(divEl) {
     let element;
     const allTaskEl = document.querySelectorAll('.single-todo-item-container');
     allTaskEl.forEach((task, i) => {
@@ -99,6 +103,7 @@ export default class TodoLogic {
    */
   editTask(options, param) {
     console.log(options);
+    console.log(this.#taskIndex);
   }
 
   formInputs() {}
