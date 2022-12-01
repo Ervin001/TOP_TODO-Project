@@ -88,7 +88,9 @@ export default class TodoLogic {
   #getDivIndex(divEl) {
     let element;
     const allTaskEl = document.querySelectorAll('.single-todo-item-container');
-    allTaskEl.forEach((task, i) => {
+
+    const reversedTasks = [...allTaskEl].reverse();
+    reversedTasks.forEach((task, i) => {
       if (task.dataset.id === divEl.dataset.id) {
         return (element = i);
       }
@@ -97,13 +99,25 @@ export default class TodoLogic {
   }
 
   /**
-   * @param {object} task Todo item Div
-   * @param {object} param This object will have the updated values fo the updated todo item
-   * param will set new values in todoItem inside #todoObjectsArray and update the values in the @task then pass info to DOM for update
+   * @param {object} task Info from
    */
-  editTask(options, param) {
+  editTask(options) {
     console.log(options);
-    console.log(this.#taskIndex);
+    console.log(options.tIV);
+    console.log(options.dIV);
+    console.log(options.bIV);
+
+    // Will change the old info with the new info
+    this.#todoObjectsArray[this.#taskIndex].title = options.tIV;
+    this.#todoObjectsArray[this.#taskIndex].date = options.dIV;
+    this.#todoObjectsArray[this.#taskIndex].content = options.bIV;
+
+    // new Object and index will be passed to displayUI
+    this.passReplacedInfo(newInfo, index);
+  }
+
+  passReplacedInfo(newInfo, index) {
+    display.updateNewTaskInfo(newInfo, index);
   }
 
   formInputs() {}
