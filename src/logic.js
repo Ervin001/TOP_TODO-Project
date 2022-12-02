@@ -102,10 +102,7 @@ export default class TodoLogic {
    * @param {object} task Info from
    */
   editTask(options) {
-    console.log(options);
-    console.log(options.tIV);
-    console.log(options.dIV);
-    console.log(options.bIV);
+    const newNum = this.#taskIndex;
 
     // Will change the old info with the new info
     this.#todoObjectsArray[this.#taskIndex].title = options.tIV;
@@ -113,11 +110,7 @@ export default class TodoLogic {
     this.#todoObjectsArray[this.#taskIndex].content = options.bIV;
 
     // new Object and index will be passed to displayUI
-    this.passReplacedInfo(newInfo, index);
-  }
-
-  passReplacedInfo(newInfo, index) {
-    display.updateNewTaskInfo(newInfo, index);
+    display.updateNewTaskInfo(this.#todoObjectsArray[this.#taskIndex], newNum);
   }
 
   formInputs() {}

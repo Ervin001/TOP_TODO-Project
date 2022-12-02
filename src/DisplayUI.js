@@ -242,5 +242,19 @@ export default class Display {
     formEl.childNodes[3][2].textContent = data;
   }
 
-  editedTodo(task, newInfo) {}
+  updateNewTaskInfo(newInfo, index) {
+    // Last thing i was doing was on this function I was going to update the values in the DOM task, using the index i was going to select the array from quesrySeelctor all and tehen replace info with newInfo
+    const allTasks = document.querySelectorAll('.single-todo-item-container');
+    const reverseTask = [...allTasks].reverse();
+
+    console.dir(reverseTask[index]);
+    // title
+    reverseTask[index].children[1].children[0].textContent = newInfo.title;
+    // main content
+    reverseTask[index].children[1].children[1].textContent = newInfo.content;
+    // date
+    reverseTask[index].children[2].textContent = newInfo.date;
+    // will update values in the DOM
+    return console.log(newInfo, index);
+  }
 }
