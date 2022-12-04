@@ -111,7 +111,13 @@ export default class TodoLogic {
 
     // new Object and index will be passed to displayUI
     display.updateNewTaskInfo(this.#todoObjectsArray[this.#taskIndex], newNum);
+
+    // update local storage
+    this.#setLocalStorage();
   }
 
-  formInputs() {}
+  deleteTask() {
+    const index = this.#taskIndex;
+    console.log(index);
+  }
 }

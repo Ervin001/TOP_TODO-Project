@@ -173,6 +173,7 @@ export default class Display {
           
           <textArea name"description-rp" id="description-rp" class="inpt" required cols="30" rows="10"></textArea>
           
+          <button class="delete-btn inpt">Delete</button>
           <input type="submit" id="submit-replaced-id" value="Add"  class="inpt" />
         </form>
       </div>
@@ -243,11 +244,9 @@ export default class Display {
   }
 
   updateNewTaskInfo(newInfo, index) {
-    // Last thing i was doing was on this function I was going to update the values in the DOM task, using the index i was going to select the array from quesrySeelctor all and tehen replace info with newInfo
     const allTasks = document.querySelectorAll('.single-todo-item-container');
     const reverseTask = [...allTasks].reverse();
 
-    console.dir(reverseTask[index]);
     // title
     reverseTask[index].children[1].children[0].textContent = newInfo.title;
     // main content
@@ -255,6 +254,11 @@ export default class Display {
     // date
     reverseTask[index].children[2].textContent = newInfo.date;
     // will update values in the DOM
-    return console.log(newInfo, index);
+  }
+
+  updateModes() {
+    const dark_light_mode = document.querySelector('.light-dark-text');
+
+    console.log(dark_light_mode);
   }
 }

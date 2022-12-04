@@ -14,6 +14,15 @@ const submitEl = document.getElementById('submit-id');
 const submitReplacedEl = document.getElementById('submit-replaced-id');
 const taskEl = document.querySelectorAll('.single-todo-item-container');
 const todoCont = document.querySelector('.todo-container');
+const deleteBtnEl = document.querySelector('.delete-btn');
+
+window
+  .matchMedia('(prefers-color-scheme: dark)')
+  .addEventListener('change', event => {
+    const newColorScheme = event.matches ? 'dark' : 'light';
+    const dark_light_mode = document.querySelector('.light-dark-text');
+    dark_light_mode.textContent = newColorScheme;
+  });
 
 // EventListener for Tasks
 todoCont.addEventListener('click', function (e) {
@@ -54,6 +63,15 @@ buttonEl.addEventListener('click', display.toggleForm);
 submitReplacedEl.addEventListener('click', replacedValues);
 
 submitEl.addEventListener('click', inputValues);
+
+deleteBtnEl.addEventListener('click', deleteTodo);
+
+// for deleting the selected task
+
+function deleteTodo(e) {
+  e.preventDefault();
+  display.deleteTask();
+}
 
 // for edited task
 function replacedValues(e) {
