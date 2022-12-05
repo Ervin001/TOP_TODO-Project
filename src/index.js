@@ -15,6 +15,8 @@ const submitReplacedEl = document.getElementById('submit-replaced-id');
 const taskEl = document.querySelectorAll('.single-todo-item-container');
 const todoCont = document.querySelector('.todo-container');
 const deleteBtnEl = document.querySelector('.delete-btn');
+const formEl = document.querySelector('.form-container');
+const replaceFormEl = document.querySelector('.replacement-form-container');
 
 window
   .matchMedia('(prefers-color-scheme: dark)')
@@ -65,10 +67,6 @@ submitReplacedEl.addEventListener('click', replacedValues);
 submitEl.addEventListener('click', inputValues);
 
 deleteBtnEl.addEventListener('click', deletedTask);
-// deleteBtnEl.addEventListener('click', e => {
-//   e.preventDefault();
-//   console.log(deleteBtnEl);
-// });
 
 // deleteTask
 function deletedTask(e) {
@@ -138,7 +136,22 @@ function inputValues(e) {
     titleInputValue.value = '';
     dateInputValue.value = '';
     bodyInputValue.value = '';
-    const formEl = document.querySelector('.todo-form');
     display.toggleForm();
   }
 }
+
+document.addEventListener('mouseup', function (e) {
+  if (!formEl.classList.contains('hidden')) {
+    if (!formEl.contains(e.target)) {
+      formEl.classList.toggle('hidden');
+    }
+  }
+});
+
+document.addEventListener('mouseup', function (e) {
+  if (!replaceFormEl.classList.contains('hidden')) {
+    if (!replaceFormEl.contains(e.target)) {
+      replaceFormEl.classList.toggle('hidden');
+    }
+  }
+});
