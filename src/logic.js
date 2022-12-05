@@ -123,8 +123,4 @@ export default class TodoLogic {
     this.#setLocalStorage();
     display.toggleReplaceTaskForm();
   }
-
-  t(r) {
-    console.log(r);
-  }
 }
