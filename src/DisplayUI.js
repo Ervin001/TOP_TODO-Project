@@ -216,8 +216,6 @@ export default class Display {
     });
   }
 
-  deleteTodo(item) {}
-
   toggleForm() {
     const formEl = document.querySelector('.form-container');
     formEl.classList.toggle('hidden');
@@ -258,7 +256,13 @@ export default class Display {
 
   updateModes() {
     const dark_light_mode = document.querySelector('.light-dark-text');
+  }
 
-    console.log(dark_light_mode);
+  deleteDOMTask(index) {
+    const allTasks = [
+      ...document.querySelectorAll('.single-todo-item-container'),
+    ].reverse();
+
+    allTasks[index].remove();
   }
 }

@@ -64,13 +64,16 @@ submitReplacedEl.addEventListener('click', replacedValues);
 
 submitEl.addEventListener('click', inputValues);
 
-deleteBtnEl.addEventListener('click', deleteTodo);
+deleteBtnEl.addEventListener('click', deletedTask);
+// deleteBtnEl.addEventListener('click', e => {
+//   e.preventDefault();
+//   console.log(deleteBtnEl);
+// });
 
-// for deleting the selected task
-
-function deleteTodo(e) {
+// deleteTask
+function deletedTask(e) {
   e.preventDefault();
-  display.deleteTask();
+  todoLogic.deleteTask();
 }
 
 // for edited task

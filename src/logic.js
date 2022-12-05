@@ -116,8 +116,15 @@ export default class TodoLogic {
     this.#setLocalStorage();
   }
 
-  deleteTask() {
+  deleteTask(e) {
     const index = this.#taskIndex;
-    console.log(index);
+    display.deleteDOMTask(index);
+    this.#todoObjectsArray.splice(index, 1);
+    this.#setLocalStorage();
+    display.toggleReplaceTaskForm();
+  }
+
+  t(r) {
+    console.log(r);
   }
 }
