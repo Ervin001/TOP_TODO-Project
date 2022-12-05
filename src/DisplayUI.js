@@ -229,7 +229,6 @@ export default class Display {
   addExistingInputFields(data) {
     const formEl = document.querySelector('.replacement-form-container');
 
-    console.log(formEl);
     // Title
     formEl.childNodes[3][0].value = data;
     formEl.childNodes[3][0].textContent = data;
