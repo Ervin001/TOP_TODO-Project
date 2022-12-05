@@ -20,7 +20,7 @@ const replaceFormEl = document.querySelector('.replacement-form-container');
 
 window
   .matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', event => {
+  .addEventListener('change', (event) => {
     const newColorScheme = event.matches ? 'dark' : 'light';
     const dark_light_mode = document.querySelector('.light-dark-text');
     dark_light_mode.textContent = newColorScheme;
