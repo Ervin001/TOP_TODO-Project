@@ -4,23 +4,22 @@ const display = new Display();
 export default class TodoLogic {
   #todoObjectsArray = [];
   #taskIndex;
+  #checked;
 
   constructor() {
     this.#getLocalStorage();
   }
 
-  createTodoObj(title, date, content, id) {
+  createTodoObj(title, date, content, id, checked = false) {
     this.#addItemToArray({
       title: title,
       date: date,
       content: content,
       id: id,
+      checked: checked,
     });
   }
 
-  logTodos() {
-    return this.#todoObjectsArray;
-  }
   // main func doing the work
   #addItemToArray(item) {
     // item = obj
@@ -53,12 +52,17 @@ export default class TodoLogic {
   }
 
   // This function will fill inputs with selected div
-  taskDiv(div) {
+  taskDiv(div, checked) {
     const replaceFormEl = document.querySelector('.replacement-form-container');
-    const allTaskEl = document.querySelectorAll('.single-todo-item-container');
+    const allTaskEl = [
+      ...document.querySelectorAll('.single-todo-item-container'),
+    ].reverse();
 
+    this.#checked = checked;
     // div details
     const divObj = {
+      // checkbox
+      divCheck: div.dataset.checked,
       // title
       divT: div.children[1].children[0].textContent,
       // body
@@ -68,7 +72,12 @@ export default class TodoLogic {
       divDataset: div.dataset.id,
     };
 
-    const { divT, divC, divD, divDataset } = divObj;
+    display.showChecked(this.#todoObjectsArray);
+
+    const { divCheck, divT, divC, divD, divDataset } = divObj;
+
+    // checked
+    div.children[0].children[0].checked = checked;
 
     // title
     replaceFormEl.children[1][0].textContent = divT;
@@ -83,6 +92,11 @@ export default class TodoLogic {
 
     // getting the index
     this.#taskIndex = this.#getDivIndex(div);
+
+    // changes value of checked in objects array
+    this.#todoObjectsArray[this.#taskIndex].checked = checked;
+    // This line is for the variable in the logic class
+    this.#todoObjectsArray[this.#taskIndex].checked = this.#checked;
   }
 
   #getDivIndex(divEl) {
@@ -108,7 +122,9 @@ export default class TodoLogic {
     this.#todoObjectsArray[this.#taskIndex].title = options.tIV;
     this.#todoObjectsArray[this.#taskIndex].date = options.dIV;
     this.#todoObjectsArray[this.#taskIndex].content = options.bIV;
+    this.#todoObjectsArray[this.#taskIndex].checked = this.#checked;
 
+    display.showChecked(this.#todoObjectsArray);
     // new Object and index will be passed to displayUI
     display.updateNewTaskInfo(this.#todoObjectsArray[this.#taskIndex], newNum);
 
@@ -122,5 +138,9 @@ export default class TodoLogic {
     this.#todoObjectsArray.splice(index, 1);
     this.#setLocalStorage();
     display.toggleReplaceTaskForm();
+  }
+
+  passArr() {
+    display.showChecked(this.#todoObjectsArray);
   }
 }

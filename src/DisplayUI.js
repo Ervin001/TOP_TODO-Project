@@ -185,7 +185,7 @@ export default class Display {
     let { title, content, date, id } = todoObject;
 
     const todoItemEL = `
-      <div class="single-todo-item-container" data-id="${id}">
+      <div class="single-todo-item-container" data-checked="false" data-id="${id}">
         <div class="checkBox-container td-item">
 
         <input type="checkbox" id="checkbox" name="checkbox">
@@ -263,5 +263,16 @@ export default class Display {
     ].reverse();
 
     allTasks[index].remove();
+  }
+
+  showChecked(arr) {
+    const allTasks = [
+      ...document.querySelectorAll('.single-todo-item-container'),
+    ].reverse();
+    arr.forEach((e, i) => {
+      if (e.checked) {
+        allTasks[i].children[0].children[0].checked = true;
+      }
+    });
   }
 }

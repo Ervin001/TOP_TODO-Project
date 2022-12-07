@@ -1,14 +1,18 @@
 import './styles.css';
-import Display from './displayUI.js';
 import TodoLogic from './logic.js';
+import Display from './displayUI.js';
 
 import { format } from 'date-fns';
 
-const display = new Display();
 const todoLogic = new TodoLogic();
+const display = new Display();
 const dateFormat = format(new Date(), 'MMMM dd, yyyy');
 
 display.loadHome();
+window.onload = function () {
+  todoLogic.passArr();
+};
+
 const buttonEl = document.querySelector('.add-btn');
 const submitEl = document.getElementById('submit-id');
 const submitReplacedEl = document.getElementById('submit-replaced-id');
@@ -17,10 +21,11 @@ const todoCont = document.querySelector('.todo-container');
 const deleteBtnEl = document.querySelector('.delete-btn');
 const formEl = document.querySelector('.form-container');
 const replaceFormEl = document.querySelector('.replacement-form-container');
+const checkValueEl = document.getElementById('checkbox');
 
 window
   .matchMedia('(prefers-color-scheme: dark)')
-  .addEventListener('change', (event) => {
+  .addEventListener('change', event => {
     const newColorScheme = event.matches ? 'dark' : 'light';
     const dark_light_mode = document.querySelector('.light-dark-text');
     dark_light_mode.textContent = newColorScheme;
@@ -28,6 +33,10 @@ window
 
 // EventListener for Tasks
 todoCont.addEventListener('click', function (e) {
+  if (e.target.name === 'checkbox') {
+    // pass that into display and set the value
+    // display.updateChecked(e.target.checked);
+  }
   // check grandchildEl
   const grandKidsEl =
     e.target.className === 'todo-Title' || e.target.className === 'todo-Body';
@@ -42,26 +51,29 @@ todoCont.addEventListener('click', function (e) {
   // Returns the TODO DIV chosen
   if (grandKidsEl) {
     display.toggleReplaceTaskForm();
-    return todoLogic.taskDiv(e.target.parentElement.parentElement);
+
+    return todoLogic.taskDiv(
+      e.target.parentElement.parentElement,
+      e.target.parentElement.parentElement.children[0].children[0].checked
+    );
   } else if (childEl) {
     display.toggleReplaceTaskForm();
-    return todoLogic.taskDiv(e.target.parentElement);
+    return todoLogic.taskDiv(
+      e.target.parentElement,
+      e.target.parentElement.children[0].children[0].checked
+    );
   } else if (parentEl) {
     display.toggleReplaceTaskForm();
-    return todoLogic.taskDiv(e.target);
+    return todoLogic.taskDiv(
+      e.target,
+      e.target.children[0].children[0].checked
+    );
   }
 });
 
 buttonEl.addEventListener('click', display.toggleForm);
-// const todoExampleArray = [
-//   {
-//     title: 'Go to Store',
-//     content: 'Get different things in the store',
-//     date: 'Today',
-//     id: '000000',
-//   },
-// ];
 
+// for edited task
 submitReplacedEl.addEventListener('click', replacedValues);
 
 submitEl.addEventListener('click', inputValues);
@@ -78,6 +90,7 @@ function deletedTask(e) {
 function replacedValues(e) {
   e.preventDefault();
 
+  const checkBoxValue = document.getElementById('checkbox');
   // Values from the form
   const titleInputValue = document.getElementById('title-rp');
   const dateInputValue = document.getElementById('date-rp');
@@ -92,12 +105,12 @@ function replacedValues(e) {
     bodyInputValue.value !== ''
   ) {
     // Form values are sent to logic.js
-    // This code needs to be replaced with a method that will replace the selected task with the new information
     let tIV = titleInputValue.value;
     let dIV = dateInputValue.value;
     let bIV = bodyInputValue.value;
+    let chDiv = checkBoxValue.checked;
 
-    todoLogic.editTask({ tIV, dIV, bIV, date });
+    todoLogic.editTask({ tIV, dIV, bIV, date, chDiv });
 
     // Form values are cleared
     titleInputValue.value = '';
