@@ -22,9 +22,13 @@
   },
   "homepage": "https://github.com/Ervin001/TOP_TODO-Project#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/preset-env": "^7.20.2",
+    "babel-loader": "^9.1.2",
     "css-loader": "^6.7.1",
     "html-webpack-plugin": "^5.5.0",
-    "style-loader": "^3.3.1"
+    "style-loader": "^3.3.1",
+    "webpack": "^5.75.0"
   },
   "dependencies": {
     "date-fns": "^2.29.3"
